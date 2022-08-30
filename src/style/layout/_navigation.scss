@@ -1,0 +1,9 @@
+@use "../abstract" as *;
+
+.navigation{
+    .logo{
+        display: inline-block;
+        @include size (15px,20px,0 0 20px 20px);
+        background-color: black;
+    }
+}

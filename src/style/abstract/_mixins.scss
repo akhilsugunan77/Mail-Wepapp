@@ -1,0 +1,7 @@
+@use "placeholder" as *;
+
+@mixin size($width:auto,$height:auto,$border-radius:0){
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+}
