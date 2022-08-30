@@ -1,2 +1,2 @@
-import  "../style/style.scss"
-import "../assets/pink.jpg"
+import  "../style/style.scss";
+
