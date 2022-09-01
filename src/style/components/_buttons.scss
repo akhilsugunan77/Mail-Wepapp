@@ -1,0 +1,5 @@
+@use "../abstract" as *;
+
+.button-primary{
+    @include button($width:164px,$height:36px,$background-color:$primary-color,$color:$white,$font-size:12px);
+}

@@ -4,7 +4,7 @@
 header{
     position:fixed;
     width: 100%;
-    background-color: #fff;
+    background-color: $white;
 }
 
 .main-nav{
@@ -18,10 +18,11 @@ header{
         .brand-img{
             display: inline-block;
             @include size(15px,20px, 0 0 20px 20px);
-            background-color: $dark;
+            background-color: $black;
         }
         .brand-text{
             font-size: 20px;
+            color: $black;
         }
     }
     .notification{
@@ -34,4 +35,8 @@ header{
         float: right;
     }
     @extend %clearfix;
+}
+
+.side-nav{
+    text-align: center;
 }
