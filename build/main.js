@@ -14,16 +14,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/fonts/OpenSans.woff":
-/*!*********************************!*\
-  !*** ./src/fonts/OpenSans.woff ***!
-  \*********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "fonts/OpenSans.woff";
-
-/***/ }),
-
 /***/ "./src/images/random.jpg":
 /*!*******************************!*\
   !*** ./src/images/random.jpg ***!
@@ -114,8 +104,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/style.scss */ "./src/style/style.scss");
 /* harmony import */ var _images_random_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/random.jpg */ "./src/images/random.jpg");
-/* harmony import */ var _fonts_OpenSans_woff__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../fonts/OpenSans.woff */ "./src/fonts/OpenSans.woff");
-
 
 
 })();

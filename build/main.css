@@ -1,12 +1,6 @@
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss ***!
   \***************************************************************************************************************/
-@font-face {
-  font-family: "opensans";
-  src: url(ab6e9d5d7db5dfffc24d.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -76,6 +70,132 @@ ul {
 
 li {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "opensans";
+  src: url(fonts/OpenSans.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "opensans";
+}
+
+.text-center {
+  text-align: center;
+}
+
+.main-nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+
+.main-nav {
+  padding: 20px 22px 20px 26px;
+}
+.main-nav .col {
+  float: left;
+  width: 33.33%;
+}
+.main-nav .brand {
+  float: left;
+}
+.main-nav .brand .brand-img {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: #000000;
+}
+.main-nav .brand .brand-text {
+  font-size: 20px;
+}
+.main-nav .notification {
+  display: inline-block;
+  font-size: 16px;
+  color: #8e8e93;
+  padding-top: 5px;
+}
+.main-nav .search-bar {
+  float: right;
+}
+
+.col-sm {
+  float: left;
+  height: 100vh;
+  width: 20%;
+  padding-top: 80px;
+  background-color: mediumpurple;
+}
+
+.col-md {
+  float: left;
+  height: 100vh;
+  width: 30%;
+  padding-top: 80px;
+  background-color: peachpuff;
+}
+
+.col-lg {
+  float: left;
+  height: 100vh;
+  width: 50%;
+  padding-top: 80px;
+  background-color: burlywood;
+}
+
+.search-bar {
+  width: 294px;
+  height: 30px;
+  border-radius: 0;
+  position: relative;
+}
+.search-bar button {
+  height: 100%;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+}
+.search-bar .icon-btn {
+  left: 0;
+}
+.search-bar .icon-btn .fa-magnifying-glass {
+  color: #b4b0af;
+  font-size: 12px;
+  margin-left: 6px;
+}
+.search-bar .dropdown-btn {
+  left: 25px;
+}
+.search-bar .dropdown-btn .fa-chevron-down {
+  font-size: 8px;
+  color: #b4b0af;
+}
+.search-bar input {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+  padding: 0 20px 0 40px;
+  border: none;
+}
+.search-bar input:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=main.css.map*/
