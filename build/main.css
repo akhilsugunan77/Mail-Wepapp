@@ -1,6 +1,12 @@
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss ***!
   \***************************************************************************************************************/
+@font-face {
+  font-family: "opensans";
+  src: url(ab6e9d5d7db5dfffc24d.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -70,14 +76,6 @@ ul {
 
 li {
   list-style: none;
-}
-
-.navigation .logo {
-  display: inline-block;
-  width: 15px;
-  height: 20px;
-  border-radius: 0 0 20px 20px;
-  background-color: black;
 }
 
 /*# sourceMappingURL=main.css.map*/
