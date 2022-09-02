@@ -18,7 +18,6 @@ module.exports = {
                 cleanOnceBeforeBuildPatterns: [path.join(__dirname, 'build/**/*')]
             }),
         ],
-    devtool:"source-map",
     module:{
         rules:[
             {
