@@ -1,0 +1,20 @@
+@use "../abstract" as *;
+.side-nav{
+    position: relative;
+    .button-container{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        button{
+            @include size(50%,60px);
+            float: left;
+            color: $color-10;
+            &:first-child{
+                border-right: 1px solid $accent-color;
+            }
+            &:hover{
+                background-color: rgba(142, 142, 147, 0.188);
+            }
+        }
+    }
+}

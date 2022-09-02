@@ -2,12 +2,14 @@
 
 
 header{
-    position:fixed;
     width: 100%;
-    background-color: $white;
 }
 
 .main-nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $white;
     padding: 20px 22px 20px 26px;
     .col{
         float: left;
@@ -37,6 +39,3 @@ header{
     @extend %clearfix;
 }
 
-.side-nav{
-    text-align: center;
-}

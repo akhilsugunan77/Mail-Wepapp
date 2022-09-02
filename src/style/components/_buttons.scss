@@ -6,6 +6,7 @@
 }
 
 
+
 .button-group{
     
     li{
@@ -16,14 +17,11 @@
             i{
                 margin-right: 15px;
             }
-            &:focus{
-                color:$quatenary-color;
-            }
-            &:active{
-                color:$quatenary-color;
-            }
             [class|=icon]{
                 margin-right: 15px;
+            }
+            &.active{
+                color: $quatenary-color;
             }
         }
         .dropdown{
@@ -43,8 +41,8 @@
             }
         }
 
-        &:focus-within,&:hover{
-            background-color: rgba(142, 142, 147, 0.19);
+        &:hover{
+            background-color: rgba(142, 142, 147, 0.188);
             button{
                 color: $quatenary-color;
             }
@@ -54,7 +52,6 @@
                 }
             }
         }
-
     }
 
 }

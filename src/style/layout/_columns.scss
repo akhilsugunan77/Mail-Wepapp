@@ -2,7 +2,7 @@
 .col-sm{
     float: left;
     height: 100vh;
-    width: 20%;
+    width: 202px;
     padding-top: 80px;
 }
 .col-md{
@@ -10,12 +10,11 @@
     height: 100vh;
     width: 30%;
     padding-top: 80px;
-    background-color: peachpuff;
 }
 .col-lg{
     float: left;
     height: 100vh;
-    width: 50%;
+    width: calc(70% - 202px);
     padding-top: 80px;
     background-color: burlywood;
 }
