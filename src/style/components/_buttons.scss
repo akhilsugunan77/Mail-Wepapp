@@ -1,5 +1,74 @@
 @use "../abstract" as *;
 
 .button-primary{
-    @include button($width:164px,$height:36px,$background-color:$primary-color,$color:$white,$font-size:12px);
+    @include button($width:164px,$height:36px,$rounded:2px,$background-color:$tertiary-color,$color:$white,$font-size:12px,$text-transform:uppercase);
+    padding: 0;
+}
+
+
+.button-group{
+    
+    li{
+        position: relative;
+        button{
+            @include button($width:164px,$height:36px,$background-color:transparent,$color:$primary-color,$font-size:14px);
+            text-align: left;
+            i{
+                margin-right: 15px;
+            }
+            &:focus{
+                color:$quatenary-color;
+            }
+            &:active{
+                color:$quatenary-color;
+            }
+            [class|=icon]{
+                margin-right: 15px;
+            }
+        }
+        .dropdown{
+            i{
+ 
+            }
+        }
+
+        &:focus-within,&:hover{
+            background-color: rgba(142, 142, 147, 0.19);
+            button{
+                color: $quatenary-color;
+            }
+            .dropdown{
+                background-color: $denary-color;
+                color: white;
+            }
+        }
+
+    }
+
+}
+
+%icon{
+    display: inline-block;
+    @include size(8px,8px,1px);
+}
+
+.icon-primary{
+    @extend %icon;
+    border: 3px solid $quinary-color;
+}
+.icon-secondary{
+    @extend %icon;
+    border: 3px solid $senary-color;
+}
+.icon-tertiary{
+    @extend %icon;
+    border: 3px solid $septenary-color;
+}
+.icon-quatenary{
+    @extend %icon;
+    border: 3px solid $octonary-color;
+}
+.icon-quinary{
+    @extend %icon;
+    border: 3px solid $nonary-color;
 }

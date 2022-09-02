@@ -24,8 +24,12 @@
 
 @mixin button($width:200px,$height:50px,$rounded:0,
               $background-color:$primary-color,$color:$white,$border:none,
-              $font-family:$primary-font,$font-size:16px,$font-weight:"normal",$font-style:"normal",$text-transform:none){
+              $font-family:$primary-font,$font-size:16px,$font-weight:normal,$font-style:normal,$text-transform:none){
     @include size($width,$height,$rounded);
     @include color($background-color,$color,$border);
     @include font($font-family,$font-size,$font-weight,$font-style,$text-transform);
+    transition:background-color 300ms ease;
+    &:hover{
+        background-color: darken($background-color,12%);
+    }
 }
