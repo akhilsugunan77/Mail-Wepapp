@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const loader = require("sass-loader");
 
 module.exports = {
-    mode:"development",
     entry:"./src/js/index.js",
     output:{
         path:path.resolve(__dirname,"./build"),
@@ -56,7 +55,5 @@ module.exports = {
             }
         ]
     },
-    devServer:{
-        static:"./build",
-    }
+
 }

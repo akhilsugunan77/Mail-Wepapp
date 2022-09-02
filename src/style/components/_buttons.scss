@@ -27,8 +27,19 @@
             }
         }
         .dropdown{
+            position: relative;
             i{
- 
+                @include size(12px,12px,2px);
+                position: absolute;
+                font-size: 5px;
+                top: 50%;
+                transform:translateY(-50%);
+                &::before{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform:translate(-50%,-50%);
+                }
             }
         }
 
@@ -38,8 +49,9 @@
                 color: $quatenary-color;
             }
             .dropdown{
-                background-color: $denary-color;
-                color: white;
+                i{
+                    @include color($denary-color,$white);
+                }
             }
         }
 
