@@ -5,19 +5,19 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
 
 .col-sm{
     float: left;
-    height: 100vh;
+    height: calc(100vh - 60px);
     width: $col-sm-size;
-    padding-top: 80px;
+    padding-top: 20px;
 }
 .col-md{
     float: left;
-    height: 100vh;
+    height: calc(100vh - 60px);
     width: $col-md-size;
-    padding-top: 80px;
+    padding-top: 20px;
 }
 .col-lg{
     float: left;
-    height: 100vh;
+    height: calc(100vh - 60px);
     width:$col-lg-size;
-    padding-top: 80px;
+    padding-top: 20px;
 }
