@@ -1,6 +1,7 @@
 @use "../abstract" as *;
 
 .mail-nav{
+    overflow-y:auto;
     article{
         position: relative;
         padding: 22px 16px 22px 20px;
@@ -8,6 +9,7 @@
         height: 90px;
         cursor: pointer;
         &:first-child{
+            height: 68px;
             padding-top: 0px;
         }
         .heading{
@@ -27,6 +29,7 @@
         }
     }
     article.active{
+        border: none;
         &::before{
             content: "";
             position: absolute;
