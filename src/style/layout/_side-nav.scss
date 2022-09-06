@@ -5,15 +5,23 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        button{
+        a{
             @include size(50%,60px);
+            position: relative;
             float: left;
-            color: $color-10;
+            color: $btn-clr-quatenary;
+            cursor: pointer;
             &:first-child{
-                border-right: 1px solid $accent-color;
+                border-right: 1px solid $white-three;
             }
             &:hover{
-                background-color: rgba(142, 142, 147, 0.188);
+                background-color: $dark-07;
+            }
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
         }
     }

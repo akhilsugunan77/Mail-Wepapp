@@ -25,7 +25,14 @@
                     <button class="dropdown-btn">
                         <i class="fa-sharp fa-solid fa-chevron-down"></i>
                     </button>
-                    <input type="text" name="" id="">
+                    <input type="text">
+                    <ul class="data-list hidden">
+                        <li><a>personal</a></li>
+                        <li><a>clients</a></li>
+                        <li><a>family</a></li>
+                        <li><a>friends</a></li>
+                        <li><a>archives</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -33,62 +40,171 @@
         <nav class="side-nav col-sm text-center">
             <button class="button-primary">Compose</button>
             <ul class="button-group mt-28">
-                <li><button><i class="fa-solid fa-inbox"></i>Inbox</button></li>
-                <li><button><i class="fa-solid fa-right-from-bracket"></i>Sent Mail</button></li>
-                <li><button><i class="fa-regular fa-star"></i>Starred</button></li>
-                <li><button><i class="fa-regular fa-file-lines"></i>Draft</button></li>
-                <li><button><i class="fa-solid fa-trash-can"></i>Trash</button></li>
+                <li><a class="active"><i class="fa-solid fa-inbox"></i>Inbox</a></li>
+                <li><a><i class="fa-solid fa-right-from-bracket"></i>Sent Mail</a></li>
+                <li><a><i class="fa-regular fa-star"></i>Starred</a></li>
+                <li><a><i class="fa-regular fa-file-lines"></i>Draft</a></li>
+                <li><a><i class="fa-solid fa-trash-can"></i>Trash</a></li>
             </ul>
             <ul class="button-group mt-38">
-                <li><button> <span class="icon-primary"></span>Personal</button></li>
-                <li><button class="dropdown"><span class="icon-secondary"></span>Clients<i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></button></li>
-                <li><button> <span class="icon-tertiary"></span> Family</button></li>
-                <li><button> <span class="icon-quatenary"></span> Friends</button></li>
-                <li><button> <span class="icon-quinary"></span> Archives</button></li>
+                <li><a><span class="icon personal"></span>Personal</a></li>
+                <li><a class="dropdown"><span class="icon clients"></span>Clients<i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
+                <li><a> <span class="icon family"></span> Family</a></li>
+                <li><a> <span class="icon friends"></span> Friends</a></li>
+                <li><a> <span class="icon archives"></span> Archives</a></li>
             </ul>
             <div class="button-container">
-                <button><i class="fa-solid fa-gear"></i></button>
-                <button><i class="fa-regular fa-user"></i></button>
+                <a><i class="fa-solid fa-gear"></i></a>
+                <a><i class="fa-regular fa-user"></i></a>
             </div>
         </nav>
         <aside class="mail-nav col-md">
-            <article>
-                <h2 class="heading">My portfolio is up</h2> <span class="time">18:17</span> <br>
-                <span class="title mt-10">Jimmy Raherlarisoa</span>
-                <ul class="icon-nav mt-10">
-                    <li><button><i class="fa-solid fa-share"></i></button></li>
-                    <li><button><i class="fa-solid fa-circle"></i></button></li>
-                    <li><button><i class="fa-solid fa-paperclip"></i></button></li>
-                </ul>   
-            </article>
-            <article>
+           <ul class="msg-notification-container">
+            <li class="msg-notification">
+                <h2 class="heading">My portfolio is up</h2><span class="time">18:17</span> <br>
+                <span class="title">Jimmy Raherlarisoa</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>   
+            </li>
+            <li class="msg-notification active">
                 <h2 class="heading">Feedbacks UI Concept</h2> <span class="time">18:17</span> <br>
-                <span class="title mt-10">Anne Thai</span>
-                <ul class="icon-nav mt-10">
-                    <li><button><i class="fa-solid fa-share"></i></button></li>
-                    <li><button><i class="fa-solid fa-circle"></i></button></li>
-                    <li><button><i class="fa-solid fa-paperclip"></i></button></li>
-                </ul>   
-            </article>
-            <article>
-                <h2 class="heading">My portfolio is up</h2> <span class="time">18:17</span> <br>
-                <span class="title mt-10">Jimmy Raherlarisoa</span>
-                <ul class="icon-nav mt-10">
-                    <li><button><i class="fa-solid fa-share"></i></button></li>
-                    <li><button><i class="fa-solid fa-circle"></i></button></li>
-                    <li><button><i class="fa-solid fa-paperclip"></i></button></li>
-                </ul>   
-            </article>
-            <article>
-                <h2 class="heading">My portfolio is up</h2> <span class="time">18:17</span> <br>
-                <span class="title mt-10">Jimmy Raherlarisoa</span>
-                <ul class="icon-nav mt-10">
-                    <li><button><i class="fa-solid fa-share"></i></button></li>
-                    <li><button><i class="fa-solid fa-circle"></i></button></li>
-                    <li><button><i class="fa-solid fa-paperclip"></i></button></li>
-                </ul>   
-            </article>
+                <span class="title">Anne Thai</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>      
+            </li>
+            <li class="msg-notification">
+                <h2 class="heading">Don't forget my birthday</h2> <span class="time">18:17</span> <br>
+                <span class="title">Luca Tantardini</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>     
+            </li>
+            <li class="msg-notification">
+                <h2 class="heading">Your Dropbox Account</h2> <span class="time">18:17</span> <br>
+                <span class="title">Dropbox Team</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>      
+            </li>
+            <li class="msg-notification">
+                <h2 class="heading">Order Confirmation</h2> <span class="time">18:17</span> <br>
+                <span class="title">A Book Apart</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>     
+            </li>
+            <li class="msg-notification">
+                <h2 class="heading">Check this crazy video</h2> <span class="time">18:17</span> <br>
+                <span class="title">Antoine Farjon</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>     
+            </li>
+            <li class="msg-notification">
+                <h2 class="heading">Hello Vincent</h2> <span class="time">18:17</span> <br>
+                <span class="title">Maxime Messer</span>
+                <div class="about">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
+                    <span><i class="fa-solid fa-share"></i></span>
+                    <span><span class="filter-icon"></span></span>
+                </div>    
+            </li>
+           </ul>
         </aside>
-        <main class="mail-content col-lg"></main>
+        <main class="mail-content col-lg">
+            <article class="mail">
+                <section>
+                    <div class="user mr-16">
+                        <!-- <img src="#" alt="user"> -->
+                        <span class="icon personal"></span>
+                    </div> 
+                    <div class="icon-nav">
+                        <button><i class="fa-regular fa-star"></i></button>
+                        <button class="active"><i class="fa-regular fa-file-lines"></i></button>
+                        <button><i class="fa-solid fa-trash-can"></i></button>
+                        <button><i class="fa-solid fa-share"></i></button>
+                    </div>
+                    <h2 class="title mb-10">Feedbacks UI Concept</h2>
+                    <span class="from">From :</span>
+                    <span class="sender">
+                        Anne Thai
+                        <i class="fa-sharp fa-solid fa-chevron-down ml-38"></i>
+                    </span>
+                    <div class="msg-description hidden">
+                        <table>
+                            <tr>
+                                <td>
+                                    <span>from:</span>
+                                </td>
+                                <td>
+                                    <span>Anne Thai</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>to:</span>
+                                </td>
+                                <td>
+                                    <span>Anne Thai</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>date:</span>
+                                </td>
+                                <td>
+                                    <span>12/12/22</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>bcc:</span>
+                                </td>
+                                <td>
+                                    <span>bccccccc</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <hr class="mt-38 mb-30">
+                <section class="content">
+                    <div class="overlay">
+                    <p>
+                        Hello Vincent,
+
+                        Forage Etsy chia cliche sriracha.  Banh mi sustainable stumptown Pitchfork occupy.  Chambray Godard biodiesel Blue Bottle cred fap, you probably haven't heard of them pop-up freegan small batch Shoreditch disrupt four loko viral stumptown.  
+
+                        Banjo deep v Tonx Tumblr.  Forage direct trade  whatever, kale chips lo-fi Blue Bottle DIY church-key flannel street art.  
+
+                        Put a bird on it hella actually leggings.  Brunch authentic slow-carb, four loko post-ironic twee vegan Marfa fap.
+                        Hoodie Tonx whatever, forage brunch Truffaut pug synth slow-carb paleo fingerstache.  
+
+                        Roof party kale chips Neutra, vinyl photo booth dreamcatcher literally.  Flexitarian banh mi 3 wolf moon blog, tofu Etsy ethnic bicycle rights banjo.  Helvetica retro yr kale chips, wolf locavore disrupt Neutra sartorial mlkshk pork belly leggings church-key cardigan.  Blog banh mi bitters tattooed.  Ennui try-hard gentrify, Helvetica Echo Park vegan ethical flannel.  
+
+                        Aesthetic mixtape chambray messenger bag, cred cardigan semiotics dreamcatcher 90's seitan.
+
+                        Flexitarian single-origin coffee cardigan pug Carles, Tonx wolf Portland Pinterest authentic.  
+
+                        Whatever 3 wolf moon artisan synth, flannel locavore Carles iPhone plaid deep v kale chips post-ironic.  Mumblecore selvage ethical Portland McSweeney's raw denim, viral swag put a bird on it pop-up +1 tousled.  Swag Banksy seitan salvia cliche.  
+                    </p>
+                    </div>
+                </section>
+            </article>
+        </main>
 </body>
 </html>

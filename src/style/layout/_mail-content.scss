@@ -2,16 +2,17 @@
 
 .mail-content{
     .mail{
-        padding: 36px 30px 0;
+        padding: 36px 30px 30px;
         height: calc(100vh - 80px);
         section{
             @extend %clearfix;
+            position: relative;
         }
     }
     .user{
         @include size(54px,54px,50%);
         position: relative;
-        background-color: mediumpurple;
+        background-color: peachpuff;
         float: left;
         span{
             position: absolute;
@@ -21,28 +22,43 @@
     }
     .title{
         font-size: 18px;
-        color: $quatenary-color;
+        color: $msg-title-clr;
     }
 
     .from{
         font-size: 13px;
-        color: $color-20;
+        color: $text-clr-primary;
     }
     .sender{
         display: inline-block;
-        position: relative;
-        padding: 3px 25px 3px 12px;
+        padding: 3px 10px 3px 12px;
         border-radius: 12px;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 0 0 1px $shadow-clr;
         font-size: 12px;
-        color: $color-30;
-        button{
-            font-size: 8px;
-            position: absolute;
-            height: 100%;
-            right: 5px;
-            top: 50%;
-            transform:translateY(-50%);
+        color: $msg-sender-clr-secondary;
+        cursor: pointer;
+        i{
+            font-size: 10px;
+        }
+    }
+    .msg-description{
+        position: absolute;
+        background-color: $white;
+        padding: 10px;
+        left: 120px;
+        z-index: 10;
+        border: 1px solid $msg-sender-clr-secondary;
+        box-shadow: 0 0 0 1px $shadow-clr;
+        font-size: 12px;
+        color: $msg-sender-clr-secondary;
+        table{
+            width: 300px;
+            td{
+                padding: 5px ;
+                &:first-child{
+                    text-align: right;
+                }
+            }
         }
     }
 
@@ -50,40 +66,68 @@
         float: right;
         overflow: hidden;
         @include size(170px,34px,18px);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 0 0 1px $shadow-clr;
+        @extend %clearfix;
         button{
             width: 25%;
             height: 100%;
             float: left;
-            color: $primary-color;
+            color: $btn-clr-tertiary;
             font-size: 16px;
+            margin-right: 0;
+            &:hover{
+                background-color: $shadow-clr;
+            }
         }
         button.active{
-            background-color: $tertiary-color;
             color: $white;
+            background-color: $btn-clr-primary;
         }
     }
+
     hr{
-        background-color: $color-40;
+        background-color: $thematic-break;
         padding: 0; 
         border:none;
         @include size(100%,2px);
         clear: both;
     }
     .content{
-        overflow-y: auto;
         height: 80%;
         font-size: 14px;
-        color: $color-50;
+        color: $msg-text-color;
+        overflow: hidden;
         position: relative;
         .overlay{
-            width: 100%;
             height: 100%;
-            position: absolute;
-            background-image:linear-gradient(transparent 70%,white)
+            overflow-y: scroll;
+            scrollbar-width:thin;
+            scrollbar-color: gray  white;
+            &::-webkit-scrollbar{
+                width: 8px;
+                background-color: white;
+            }
+            &::-webkit-scroll-track{
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                background-color: $battleship-grey;
+            }
         }
-        pre{
+        p{
             white-space: pre-line;
+            height: 100%;
+            padding-right: 10px;
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(transparent 80%, white);
+            }
         }
     }
 }

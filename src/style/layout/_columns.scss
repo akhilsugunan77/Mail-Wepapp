@@ -1,3 +1,5 @@
+@use "../abstract" as *;
+
 $col-sm-size:202px;
 $col-md-size:30%;
 $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
@@ -13,7 +15,6 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     float: left;
     height: calc(100vh - 60px);
     width: $col-md-size;
-    padding-top: 20px;
 }
 .col-lg{
     float: left;

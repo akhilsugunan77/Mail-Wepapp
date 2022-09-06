@@ -1,18 +1,18 @@
 @use "../abstract" as *;
 
 .button-primary{
-    @include button($width:164px,$height:36px,$rounded:2px,$background-color:$tertiary-color,$color:$white,$font-size:12px,$text-transform:uppercase);
+    @include button($width:164px,$height:36px,$rounded:2px,$background-color:$btn-clr-primary,$color:$white,$font-size:12px,$text-transform:uppercase);
     padding: 0;
 }
 
-
-
 .button-group{
-    
     li{
         position: relative;
-        button{
-            @include button($width:164px,$height:36px,$background-color:transparent,$color:$primary-color,$font-size:14px);
+        a{
+            display: inline-block;
+            @include button($width:150px,$height:auto,$background-color:transparent,$color:$btn-clr-secondary,$font-size:14px);
+            padding: 10px 5px;
+            cursor: pointer;
             text-align: left;
             i{
                 margin-right: 15px;
@@ -21,7 +21,7 @@
                 margin-right: 15px;
             }
             &.active{
-                color: $quatenary-color;
+                color: $btn-clr-secondary-active;
             }
         }
         .dropdown{
@@ -42,13 +42,13 @@
         }
 
         &:hover{
-            background-color: rgba(142, 142, 147, 0.188);
-            button{
-                color: $quatenary-color;
+            background-color:$dark-07;
+            a{
+                color: $btn-clr-secondary-active;
             }
             .dropdown{
                 i{
-                    @include color($denary-color,$white);
+                    @include color($btn-clr-secondary,$white);
                 }
             }
         }
@@ -56,28 +56,25 @@
 
 }
 
-%icon{
+.icon{
     display: inline-block;
     @include size(8px,8px,1px);
+    border: 3px solid;
+    margin-right: 8px;
 }
 
-.icon-primary{
-    @extend %icon;
-    border: 3px solid $quinary-color;
+.personal{
+    border: 3px solid $personal-clr;
 }
-.icon-secondary{
-    @extend %icon;
-    border: 3px solid $senary-color;
+.clients{
+    border: 3px solid $clients-clr;
 }
-.icon-tertiary{
-    @extend %icon;
-    border: 3px solid $septenary-color;
+.family{
+    border: 3px solid $family-clr;
 }
-.icon-quatenary{
-    @extend %icon;
-    border: 3px solid $octonary-color;
+.friends{
+    border: 3px solid $friends-clr;
 }
-.icon-quinary{
-    @extend %icon;
-    border: 3px solid $nonary-color;
+.archives{
+    border: 3px solid $archives-clr;
 }
