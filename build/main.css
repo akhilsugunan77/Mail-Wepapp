@@ -598,12 +598,12 @@ body {
   border-radius: 10px;
   background-color: #70727a;
 }
-.mail-content .content p {
+.mail-content .content pre {
   white-space: pre-line;
   height: 100%;
   padding-right: 10px;
 }
-.mail-content .content p::after {
+.mail-content .content pre::after {
   content: "";
   position: absolute;
   bottom: 0;
