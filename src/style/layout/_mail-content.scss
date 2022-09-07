@@ -1,6 +1,7 @@
 @use "../abstract" as *;
 
 .mail-content{
+    padding-top: 20px;
     .mail{
         padding: 36px 30px 30px;
         height: calc(100vh - 80px);
@@ -40,23 +41,38 @@
         i{
             font-size: 10px;
         }
+        &:hover{
+            background-color: $shadow-clr;
+        }
     }
-    .msg-description{
+    .mail-description{
         position: absolute;
         background-color: $white;
         padding: 10px;
         left: 120px;
         z-index: 10;
-        border: 1px solid $msg-sender-clr-secondary;
-        box-shadow: 0 0 0 1px $shadow-clr;
+        border: 1px solid $border-clr-primary;
         font-size: 12px;
         color: $msg-sender-clr-secondary;
+        border-radius: 5px;
         table{
-            width: 300px;
+            width:300px;
             td{
-                padding: 5px ;
+                padding: 5px;
+                span{
+                    display: inline-block;
+                    overflow: hidden;
+                }
                 &:first-child{
+                    width: 100px;
                     text-align: right;
+                }
+                &:last-child{
+                    span{
+                        width: 200px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }                
                 }
             }
         }

@@ -97,7 +97,7 @@ body {
   display: none;
 }
 
-.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .msg-notification::after, .mail-nav::after, .about::after, .main-nav::after {
+.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-notification::after, .mail-nav::after, .main-nav::after {
   content: "";
   display: block;
   clear: both;
@@ -317,7 +317,6 @@ body {
   float: left;
   height: calc(100vh - 60px);
   width: 202px;
-  padding-top: 20px;
 }
 
 .col-md {
@@ -330,7 +329,6 @@ body {
   float: left;
   height: calc(100vh - 60px);
   width: calc(100% - 202px - 30%);
-  padding-top: 20px;
 }
 
 .main-nav {
@@ -370,13 +368,14 @@ body {
 
 .side-nav {
   position: relative;
+  padding-top: 20px;
 }
-.side-nav .button-container {
+.side-nav .settings {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.side-nav .button-container a {
+.side-nav .settings a {
   width: 50%;
   height: 60px;
   border-radius: 0;
@@ -385,13 +384,13 @@ body {
   color: #6f6f75;
   cursor: pointer;
 }
-.side-nav .button-container a:first-child {
+.side-nav .settings a:first-child {
   border-right: 1px solid #ededed;
 }
-.side-nav .button-container a:hover {
+.side-nav .settings a:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
-.side-nav .button-container a i {
+.side-nav .settings a i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -401,7 +400,7 @@ body {
 .mail-nav {
   overflow-y: auto;
 }
-.mail-nav .msg-notification {
+.mail-nav .mail-notification {
   display: block;
   position: relative;
   padding: 22px 16px 22px 20px;
@@ -409,35 +408,35 @@ body {
   height: 90px;
   cursor: pointer;
 }
-.mail-nav .msg-notification:first-child {
+.mail-nav .mail-notification:first-child {
   border: none;
 }
-.mail-nav .msg-notification:last-child {
+.mail-nav .mail-notification:last-child {
   border: none;
 }
-.mail-nav .msg-notification .heading {
+.mail-nav .mail-notification .heading {
   float: left;
   font-size: 15px;
   color: #4c4f59;
 }
-.mail-nav .msg-notification .time {
+.mail-nav .mail-notification .time {
   float: right;
   font-size: 12px;
   color: #4c4f59;
 }
-.mail-nav .msg-notification .title {
+.mail-nav .mail-notification .title {
   font-size: 12px;
   color: #a3a3a8;
   float: left;
   margin-top: 10px;
 }
-.mail-nav .msg-notification:hover {
+.mail-nav .mail-notification:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
-.mail-nav .msg-notification.active {
+.mail-nav .mail-notification.active {
   border: none;
 }
-.mail-nav .msg-notification.active::before {
+.mail-nav .mail-notification.active::before {
   content: "";
   position: absolute;
   left: 0;
@@ -447,41 +446,44 @@ body {
   background-color: #007aff;
 }
 
-.about {
+.mail-info {
   float: right;
   margin-top: 8px;
 }
-.about span {
+.mail-info span {
   display: inline-block;
   margin-right: 10px;
 }
-.about span .filter-icon {
+.mail-info span .filter-icon {
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 4px;
   background-color: #9200ff;
 }
-.about span .personal {
+.mail-info span .personal {
   background-color: #9200ff;
 }
-.about span .clients {
+.mail-info span .clients {
   background-color: #ff7100;
 }
-.about span .family {
+.mail-info span .family {
   background-color: #d0db00;
 }
-.about span .friends {
+.mail-info span .friends {
   background-color: #00dcff;
 }
-.about span .archives {
+.mail-info span .archives {
   background-color: #6f6e74;
 }
-.about span i {
+.mail-info span i {
   color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
 }
 
+.mail-content {
+  padding-top: 20px;
+}
 .mail-content .mail {
   padding: 36px 30px 30px;
   height: calc(100vh - 80px);
@@ -522,25 +524,38 @@ body {
 .mail-content .sender i {
   font-size: 10px;
 }
-.mail-content .msg-description {
+.mail-content .sender:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+.mail-content .mail-description {
   position: absolute;
   background-color: #ffffff;
   padding: 10px;
   left: 120px;
   z-index: 10;
-  border: 1px solid #8f929d;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+  border: 1px solid #ededed;
   font-size: 12px;
   color: #8f929d;
+  border-radius: 5px;
 }
-.mail-content .msg-description table {
+.mail-content .mail-description table {
   width: 300px;
 }
-.mail-content .msg-description table td {
+.mail-content .mail-description table td {
   padding: 5px;
 }
-.mail-content .msg-description table td:first-child {
+.mail-content .mail-description table td span {
+  display: inline-block;
+  overflow: hidden;
+}
+.mail-content .mail-description table td:first-child {
+  width: 100px;
   text-align: right;
+}
+.mail-content .mail-description table td:last-child span {
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .mail-content .icon-nav {
   float: right;
@@ -661,15 +676,17 @@ body {
   width: 100%;
   background-color: #fff;
   text-align: center;
-  border: 1px solid;
+  border: 1px solid #ededed;
   z-index: 10;
+  font-size: 15px;
+  color: #6b6e7f;
 }
 .search-bar .data-list li {
   padding: 10px 30px;
   cursor: pointer;
 }
 .search-bar .data-list li:hover {
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
 .button-primary {
@@ -691,10 +708,10 @@ body {
   background-color: #005dc2;
 }
 
-.button-group li {
+.link-group li {
   position: relative;
 }
-.button-group li a {
+.link-group li a {
   display: inline-block;
   width: 150px;
   height: auto;
@@ -712,22 +729,22 @@ body {
   cursor: pointer;
   text-align: left;
 }
-.button-group li a:hover {
+.link-group li a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
-.button-group li a i {
+.link-group li a i {
   margin-right: 15px;
 }
-.button-group li a [class|=icon] {
+.link-group li a [class|=icon] {
   margin-right: 15px;
 }
-.button-group li a.active {
+.link-group li a.active {
   color: #4c4f59;
 }
-.button-group li .dropdown {
+.link-group li .dropdown {
   position: relative;
 }
-.button-group li .dropdown i {
+.link-group li .dropdown i {
   width: 12px;
   height: 12px;
   border-radius: 2px;
@@ -736,19 +753,19 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.button-group li .dropdown i::before {
+.link-group li .dropdown i::before {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.button-group li:hover {
+.link-group li:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
-.button-group li:hover a {
+.link-group li:hover a {
   color: #4c4f59;
 }
-.button-group li:hover .dropdown i {
+.link-group li:hover .dropdown i {
   background-color: #70727a;
   color: #ffffff;
   border: none;

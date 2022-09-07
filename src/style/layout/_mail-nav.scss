@@ -2,7 +2,7 @@
 
 .mail-nav{
     overflow-y:auto;
-    .msg-notification{
+    .mail-notification{
         display: block;
         position: relative;
         padding: 22px 16px 22px 20px;
@@ -36,7 +36,7 @@
             background-color: $msg-notification-clr;
         }
     }
-    .msg-notification.active{
+    .mail-notification.active{
         border: none;
         &::before{
             content: "";
@@ -51,10 +51,9 @@
     @extend %clearfix;
 }
 
-.about{
+.mail-info{
     float: right;
     margin-top: 8px;
-    @extend %clearfix;
         span{
                 display: inline-block;
                 margin-right: 10px;

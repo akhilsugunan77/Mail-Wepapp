@@ -9,7 +9,6 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     float: left;
     height: calc(100vh - 60px);
     width: $col-sm-size;
-    padding-top: 20px;
 }
 .col-md{
     float: left;
@@ -20,5 +19,4 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     float: left;
     height: calc(100vh - 60px);
     width:$col-lg-size;
-    padding-top: 20px;
 }

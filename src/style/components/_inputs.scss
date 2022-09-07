@@ -45,13 +45,15 @@
         width: 100%;
         background-color: #fff;
         text-align: center;
-        border: 1px solid;
+        border: 1px solid $border-clr-primary;
         z-index: 10;
+        font-size: 15px;
+        color: $text-clr-primary;
         li{
             padding: 10px 30px;
             cursor: pointer;
             &:hover{
-                background-color: gray;
+                background-color: $shadow-clr;
             }
         }
     }

@@ -1,7 +1,8 @@
 @use "../abstract" as *;
 .side-nav{
     position: relative;
-    .button-container{
+    padding-top: 20px;
+    .settings{
         position: absolute;
         bottom: 0;
         width: 100%;
