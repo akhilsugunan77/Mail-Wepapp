@@ -29,6 +29,7 @@
     @include color($background-color,$color,$border);
     @include font($font-family,$font-size,$font-weight,$font-style,$text-transform);
     transition:background-color 300ms ease;
+    display: inline-block;
     &:hover{
         background-color: darken($background-color,12%);
     }
