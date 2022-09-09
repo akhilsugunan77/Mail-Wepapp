@@ -10,13 +10,17 @@
             cursor: pointer;
             text-align: left;
             i{
-                margin-right: 15px;
-            }
-            [class|=icon]{
-                margin-right: 15px;
+                margin-right: 12px;
             }
             &.active{
                 color: $btn-clr-secondary-active;
+                span{
+                    color: $btn-clr-secondary-active;
+                }
+            }
+            span{
+                font-size: 14px;
+                color: $btn-clr-secondary;
             }
         }
         .dropdown{
@@ -33,6 +37,9 @@
                     left: 50%;
                     transform:translate(-50%,-50%);
                 }
+                &:hover{
+                    @include color($btn-clr-secondary,$white);
+                }
             }
         }
 
@@ -40,11 +47,6 @@
             background-color:$dark-07;
             a{
                 color: $btn-clr-secondary-active;
-            }
-            .dropdown{
-                i{
-                    @include color($btn-clr-secondary,$white);
-                }
             }
         }
         &:focus{
@@ -56,11 +58,10 @@
 
 .icon{
     display: inline-block;
-    @include size(8px,8px,1px);
+    @include size(8px,8px,2px);
     border: 3px solid;
-    margin-right: 8px;
+    margin-right:12px;
 }
-
 .personal{
     border: 3px solid $personal-clr;
 }

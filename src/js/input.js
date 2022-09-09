@@ -5,7 +5,9 @@ searchInput.addEventListener("click",function(e){
     if(searchList.classList.contains("hidden")){
         searchList.classList.remove("hidden")
     }
-    console.log(e)
+    else{
+        searchList.classList.add("hidden")
+    }
 })
 
 searchInput.addEventListener("keydown",e =>{

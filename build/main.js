@@ -1,6 +1,39 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/input.js":
+/*!*************************!*\
+  !*** ./src/js/input.js ***!
+  \*************************/
+/***/ (() => {
+
+var searchInput = document.getElementById("search");
+var searchList = document.getElementById("search-list");
+searchInput.addEventListener("click", function (e) {
+  if (searchList.classList.contains("hidden")) {
+    searchList.classList.remove("hidden");
+  } else {
+    searchList.classList.add("hidden");
+  }
+});
+searchInput.addEventListener("keydown", function (e) {
+  if (e.key == "Escape") {
+    searchList.classList.add("hidden");
+  }
+});
+searchList.addEventListener("click", function (e) {
+  searchInput.value = e.target.innerText;
+  searchList.classList.add("hidden");
+});
+window.addEventListener("click", function (e) {
+  if (e.target = searchList.children) {
+    console.log("true");
+  } else {
+    console.log(false);
+  }
+});
+
+/***/ }),
 
 /***/ "./src/style/style.scss":
 /*!******************************!*\
@@ -8,6 +41,7 @@
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -20,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "images/random.jpg";
 
 /***/ })
@@ -51,6 +86,30 @@ module.exports = __webpack_require__.p + "images/random.jpg";
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -61,6 +120,11 @@ module.exports = __webpack_require__.p + "images/random.jpg";
 /******/ 				if (typeof window === 'object') return window;
 /******/ 			}
 /******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -96,14 +160,18 @@ module.exports = __webpack_require__.p + "images/random.jpg";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/style.scss */ "./src/style/style.scss");
 /* harmony import */ var _images_random_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/random.jpg */ "./src/images/random.jpg");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./input */ "./src/js/input.js");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_input__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 })();

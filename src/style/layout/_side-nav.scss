@@ -1,11 +1,17 @@
 @use "../abstract" as *;
 .side-nav{
-    position: relative;
     padding-top: 20px;
+    position: fixed;
+    top: 60px;
+    z-index: 50;
+    background-color: $white-08;
+    overflow-y: auto;
     .settings{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        position:sticky;
+        margin-top: 170px;
+        bottom:0;
+        background-color: $white;
+        @extend %clearfix;
         a{
             @include size(50%,60px);
             position: relative;

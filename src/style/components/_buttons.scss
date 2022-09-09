@@ -2,6 +2,6 @@
 
 .button-primary{
     @include button($width:164px,$height:36px,$rounded:2px,$background-color:$btn-clr-primary,$color:$white,$font-size:12px,$text-transform:uppercase);
-    padding: 0;
+    padding: 12px 52px 10px;
 }
 

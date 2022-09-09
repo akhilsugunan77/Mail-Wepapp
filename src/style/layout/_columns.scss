@@ -20,3 +20,13 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     height: calc(100vh - 60px);
     width:$col-lg-size;
 }
+
+
+.row-layout{
+    .row-sm{
+        height: 60px;
+    }
+    .row-lg{
+        height: calc(100% - 10px);
+    }
+}

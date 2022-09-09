@@ -1,4 +1,4 @@
-$values:10 15 16 28 30 38 82;
+$values:2 6 10 15 16 28 30 38 82;
 
 @each $v in $values{
     .m-#{$v}{

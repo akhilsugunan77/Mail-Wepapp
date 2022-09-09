@@ -15,7 +15,7 @@
                 <a href="/" class="brand"><span class="brand-img"></span><span class="brand-text">mail</span></a>
             </div>
             <div class="col text-center">
-                <span class="notification">Sparrow(2)</span>
+                <span class="title mr-2">Sparrow </span><span class="notification">(2)</span>
             </div>
             <div class="col">
                 <div class="search-bar">
@@ -25,37 +25,41 @@
                     <button class="dropdown-btn">
                         <i class="fa-sharp fa-solid fa-chevron-down"></i>
                     </button>
-                    <input type="text">
-                    <ul class="data-list hidden">
-                        <li><a>personal</a></li>
-                        <li><a>clients</a></li>
-                        <li><a>family</a></li>
-                        <li><a>friends</a></li>
-                        <li><a>archives</a></li>
+                    <input id="search" type="text">
+                    <ul id="search-list" class="data-list hidden">
+                        <li><a href="javascript:void(0)">personal</a></li>
+                        <li><a href="javascript:void(0)">clients</a></li>
+                        <li><a href="javascript:void(0)">family</a></li>
+                        <li><a href="javascript:void(0)">friends</a></li>
+                        <li><a href="javascript:void(0)">archives</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
         <nav class="side-nav col-sm text-center">
-            <button class="button-primary">Compose</button>
+            <a class="button-primary">Compose</a>
             <ul class="link-group category mt-28">
-                <li><a class="active"><i class="fa-solid fa-inbox"></i>Inbox</a></li>
-                <li><a><i class="fa-solid fa-right-from-bracket"></i>Sent Mail</a></li>
-                <li><a><i class="fa-regular fa-star"></i>Starred</a></li>
-                <li><a><i class="fa-regular fa-file-lines"></i>Draft</a></li>
-                <li><a><i class="fa-solid fa-trash-can"></i>Trash</a></li>
+                <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span class="notification">(2)</span> </a></li>
+                <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span class="notification"></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-regular fa-star"></i>Starred <span class="notification"></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-regular fa-file-lines"></i>Draft  <span class="notification"></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span class="notification">(2)</span></a></li>
             </ul>
             <ul class="link-group filter mt-38">
-                <li><a><span class="icon personal"></span>Personal</a></li>
-                <li><a class="dropdown"><span class="icon clients"></span>Clients<i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
-                <li><a> <span class="icon family"></span> Family</a></li>
-                <li><a> <span class="icon friends"></span> Friends</a></li>
-                <li><a> <span class="icon archives"></span> Archives</a></li>
+                <li><a href="javascript:void(0)"><span class="icon personal"></span>Personal
+                <span class="notification"></span></a></li>
+                <li><a href="javascript:void(0)" class="dropdown"><span class="icon clients"></span>Clients<span class="notification"></span><i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="javascript:void(0)"><span class="icon family"></span> Family
+                <span class="notification"></span></a></li>
+                <li><a href="javascript:void(0)"> <span class="icon friends"></span>Friends
+                <span class="notification"></span></a></li>
+                <li><a href="javascript:void(0)"> <span class="icon archives"></span>Archives
+                <span class="notification"></span></a></li>
             </ul>
             <div class="settings">
-                <a><i class="fa-solid fa-gear"></i></a>
-                <a><i class="fa-regular fa-user"></i></a>
+                <a href="javascript:void(0)"><i class="fa-solid fa-gear"></i></a>
+                <a href="javascript:void(0)"><i class="fa-regular fa-user"></i></a>
             </div>
         </nav>
         <aside class="mail-nav col-md">
@@ -66,7 +70,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>   
             </li>
             <li class="mail-notification active">
@@ -75,7 +79,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>      
             </li>
             <li class="mail-notification">
@@ -84,7 +88,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>     
             </li>
             <li class="mail-notification">
@@ -93,7 +97,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>      
             </li>
             <li class="mail-notification">
@@ -102,7 +106,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>     
             </li>
             <li class="mail-notification">
@@ -111,7 +115,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>     
             </li>
             <li class="mail-notification">
@@ -120,7 +124,7 @@
                 <div class="mail-info">
                     <span><i class="fa-solid fa-paperclip"></i></span>
                     <span><i class="fa-solid fa-share"></i></span>
-                    <span><span class="filter-icon"></span></span>
+                    <span class="filter-icon"></span>
                 </div>    
             </li>
            </ul>
@@ -142,7 +146,7 @@
                     <span class="from">From :</span>
                     <span class="sender">
                         Anne Thai
-                        <i class="fa-sharp fa-solid fa-chevron-down ml-38"></i>
+                        <i class="fa-sharp fa-solid fa-chevron-down"></i>
                     </span>
                     <div class="mail-description hidden">
                         <table>
@@ -183,8 +187,7 @@
                 </section>
                 <hr class="mt-38 mb-30">
                 <section class="content">
-                    <div class="overlay">
-                    <pre>
+                    <textarea  readonly id="mail">
                         Hello Vincent,
 
                         Forage Etsy chia cliche sriracha.  Banh mi sustainable stumptown Pitchfork occupy.  Chambray Godard biodiesel Blue Bottle cred fap, you probably haven't heard of them pop-up freegan small batch Shoreditch disrupt four loko viral stumptown.  
@@ -201,8 +204,7 @@
                         Flexitarian single-origin coffee cardigan pug Carles, Tonx wolf Portland Pinterest authentic.  
 
                         Whatever 3 wolf moon artisan synth, flannel locavore Carles iPhone plaid deep v kale chips post-ironic.  Mumblecore selvage ethical Portland McSweeney's raw denim, viral swag put a bird on it pop-up +1 tousled.  Swag Banksy seitan salvia cliche.  
-                    </pre>
-                    </div>
+                    </textarea>
                 </section>
             </article>
         </main>

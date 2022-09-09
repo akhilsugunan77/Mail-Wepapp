@@ -2,42 +2,44 @@
 
 .mail-nav{
     overflow-y:auto;
+    margin-top: 60px;
+    margin-left: 202px;
     .mail-notification{
         display: block;
         position: relative;
         padding: 22px 16px 22px 20px;
         border-bottom: 1px  solid $white-three;
         height: 90px;
+        background-color: $mail-nav-bg;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         cursor: pointer;
-        &:first-child{
-            border: none;
-        }
         &:last-child{
             border: none;
         }
         .heading{
             float: left;
             font-size: 15px;
-            color: $msg-title-clr;
+            color: $mail-title-clr;
         }
         .time{
             float: right;
             font-size: 12px;
-            color:$msg-title-clr;
+            color:$mail-title-clr;
         }
         .title{
             font-size: 12px;
-            color: $msg-sender-clr-primary;
+            color: $mail-sender-clr-primary;
             float: left;
             margin-top: 10px;
         }
         @extend %clearfix;
         &:hover{
-            background-color: $msg-notification-clr;
+            background-color: $white-three;
         }
     }
     .mail-notification.active{
-        border: none;
+        background-color: $mail-notification-active-clr;
         &::before{
             content: "";
             position: absolute;
@@ -45,7 +47,10 @@
             top: 0;
             height: 100%;
             width: 4px;
-            background-color:$btn-clr-primary;
+            background-color:$mail-highlight-clr;
+        }
+        &:hover{
+            background-color: $white-three;
         }
     }
     @extend %clearfix;
@@ -54,32 +59,32 @@
 .mail-info{
     float: right;
     margin-top: 8px;
-        span{
-                display: inline-block;
-                margin-right: 10px;
-                .filter-icon{
-                    display: inline-block;
-                    @include size(8px,8px,4px);
-                    background-color: $personal-clr;
-                }
-                .personal{
-                    background-color: $personal-clr;
-                }
-                .clients{
-                    background-color: $clients-clr;
-                }
-                .family{
-                    background-color: $family-clr;
-                }
-                .friends{
-                    background-color: $friends-clr;
-                }
-                .archives{
-                    background-color: $archives-clr;
-                }
-                i{
-                    color: $dark-50;
-                    font-size: 14px;
-                }
-        }
+    span{
+        display: inline-block;
+        margin-left: 8px;
+            i{
+                color: $dark-50;
+                font-size: 14px;
+            }
+    }
+    .filter-icon{
+        display: inline-block;
+        @include size(8px,8px,4px);
+        background-color: $personal-clr;
+            }
+            .personal{
+                background-color: $personal-clr;
+            }
+            .clients{
+                background-color: $clients-clr;
+            }
+            .family{
+                background-color: $family-clr;
+            }
+            .friends{
+                background-color: $friends-clr;
+            }
+            .archives{
+                background-color: $archives-clr;
+    }
 }

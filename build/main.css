@@ -89,6 +89,10 @@ body {
   font-family: "opensans";
 }
 
+body {
+  min-height: 100vh;
+}
+
 .text-center {
   text-align: center;
 }
@@ -97,10 +101,70 @@ body {
   display: none;
 }
 
-.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-notification::after, .mail-nav::after, .main-nav::after {
+.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-notification::after, .mail-nav::after, .side-nav .settings::after, .main-nav::after {
   content: "";
   display: block;
   clear: both;
+}
+
+.m-2 {
+  margin: 2px;
+}
+
+.my-2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.mx-2 {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.mt-2 {
+  margin-top: 2px;
+}
+
+.mb-2 {
+  margin-bottom: 2px;
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.ml-2 {
+  margin-left: 2px;
+}
+
+.m-6 {
+  margin: 6px;
+}
+
+.my-6 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.mx-6 {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+}
+
+.mr-6 {
+  margin-right: 6px;
+}
+
+.ml-6 {
+  margin-left: 6px;
 }
 
 .m-10 {
@@ -331,11 +395,24 @@ body {
   width: calc(100% - 202px - 30%);
 }
 
-.main-nav {
-  width: 100%;
+.row-layout .row-sm {
   height: 60px;
-  background-color: #ffffff;
-  padding: 20px 22px 20px 26px;
+}
+.row-layout .row-lg {
+  height: calc(100% - 10px);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100;
+}
+
+.main-nav {
+  height: 60px;
+  padding: 14px 22px 15px 26px;
 }
 .main-nav .col {
   float: left;
@@ -356,6 +433,12 @@ body {
   font-size: 20px;
   color: #000000;
 }
+.main-nav .title {
+  display: inline-block;
+  font-size: 16px;
+  color: #8e8e93;
+  padding-top: 5px;
+}
 .main-nav .notification {
   display: inline-block;
   font-size: 16px;
@@ -367,13 +450,18 @@ body {
 }
 
 .side-nav {
-  position: relative;
   padding-top: 20px;
+  position: fixed;
+  top: 60px;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow-y: auto;
 }
 .side-nav .settings {
-  position: absolute;
+  position: sticky;
+  margin-top: 170px;
   bottom: 0;
-  width: 100%;
+  background-color: #ffffff;
 }
 .side-nav .settings a {
   width: 50%;
@@ -399,6 +487,8 @@ body {
 
 .mail-nav {
   overflow-y: auto;
+  margin-top: 60px;
+  margin-left: 202px;
 }
 .mail-nav .mail-notification {
   display: block;
@@ -406,10 +496,10 @@ body {
   padding: 22px 16px 22px 20px;
   border-bottom: 1px solid #ededed;
   height: 90px;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   cursor: pointer;
-}
-.mail-nav .mail-notification:first-child {
-  border: none;
 }
 .mail-nav .mail-notification:last-child {
   border: none;
@@ -431,10 +521,10 @@ body {
   margin-top: 10px;
 }
 .mail-nav .mail-notification:hover {
-  background-color: rgba(0, 0, 0, 0.07);
+  background-color: #ededed;
 }
 .mail-nav .mail-notification.active {
-  border: none;
+  background-color: rgba(142, 142, 147, 0.05);
 }
 .mail-nav .mail-notification.active::before {
   content: "";
@@ -445,6 +535,9 @@ body {
   width: 4px;
   background-color: #007aff;
 }
+.mail-nav .mail-notification.active:hover {
+  background-color: #ededed;
+}
 
 .mail-info {
   float: right;
@@ -452,36 +545,37 @@ body {
 }
 .mail-info span {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 8px;
 }
-.mail-info span .filter-icon {
+.mail-info span i {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+.mail-info .filter-icon {
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 4px;
   background-color: #9200ff;
 }
-.mail-info span .personal {
+.mail-info .personal {
   background-color: #9200ff;
 }
-.mail-info span .clients {
+.mail-info .clients {
   background-color: #ff7100;
 }
-.mail-info span .family {
+.mail-info .family {
   background-color: #d0db00;
 }
-.mail-info span .friends {
+.mail-info .friends {
   background-color: #00dcff;
 }
-.mail-info span .archives {
+.mail-info .archives {
   background-color: #6f6e74;
-}
-.mail-info span i {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
 }
 
 .mail-content {
+  margin-top: 60px;
   padding-top: 20px;
 }
 .mail-content .mail {
@@ -499,10 +593,11 @@ body {
   background-color: peachpuff;
   float: left;
 }
-.mail-content .user span {
+.mail-content .user .icon {
   position: absolute;
   top: 0;
   right: 0;
+  margin: 0;
 }
 .mail-content .title {
   font-size: 18px;
@@ -514,7 +609,10 @@ body {
 }
 .mail-content .sender {
   display: inline-block;
-  padding: 3px 10px 3px 12px;
+  width: 93px;
+  height: 23px;
+  border-radius: 0;
+  padding: 5px 10px 3px 12px;
   border-radius: 12px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
   font-size: 12px;
@@ -522,7 +620,8 @@ body {
   cursor: pointer;
 }
 .mail-content .sender i {
-  font-size: 10px;
+  margin-left: 3px;
+  font-size: 8px;
 }
 .mail-content .sender:hover {
   background-color: rgba(0, 0, 0, 0.07);
@@ -559,7 +658,6 @@ body {
 }
 .mail-content .icon-nav {
   float: right;
-  overflow: hidden;
   width: 170px;
   height: 34px;
   border-radius: 18px;
@@ -572,13 +670,24 @@ body {
   color: #6b6e7f;
   font-size: 16px;
   margin-right: 0;
+  border-right: 1px solid #ededed;
 }
 .mail-content .icon-nav button:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
+.mail-content .icon-nav button:first-child {
+  border-radius: 18px 0 0 18px;
+}
+.mail-content .icon-nav button:last-child {
+  border-radius: 0 18px 18px 0;
+  border: none;
+}
 .mail-content .icon-nav button.active {
   color: #ffffff;
   background-color: #007aff;
+}
+.mail-content .icon-nav button.active:hover {
+  background-color: #005dc2;
 }
 .mail-content hr {
   background-color: #eceff3;
@@ -596,36 +705,32 @@ body {
   overflow: hidden;
   position: relative;
 }
-.mail-content .content .overlay {
+.mail-content .content textarea {
+  width: 100%;
   height: 100%;
+  max-height: 570px;
+  padding: 0 10px 0 0;
+  font-size: 14px;
+  color: #65676e;
+  border: none;
+  resize: none;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: gray white;
+  scrollbar-color: rgba(112, 114, 122, 0.3) white;
 }
-.mail-content .content .overlay::-webkit-scrollbar {
+.mail-content .content textarea:focus {
+  outline: none;
+}
+.mail-content .content textarea::-webkit-scrollbar {
   width: 8px;
   background-color: white;
 }
-.mail-content .content .overlay::-webkit-scroll-track {
+.mail-content .content textarea::-webkit-scroll-track {
   border-radius: 10px;
 }
-.mail-content .content .overlay::-webkit-scrollbar-thumb {
+.mail-content .content textarea::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #70727a;
-}
-.mail-content .content pre {
-  white-space: pre-line;
-  height: 100%;
-  padding-right: 10px;
-}
-.mail-content .content pre::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(transparent 80%, white);
+  background-color: rgba(112, 114, 122, 0.3);
 }
 
 .search-bar {
@@ -681,11 +786,16 @@ body {
   font-size: 15px;
   color: #6b6e7f;
 }
-.search-bar .data-list li {
+.search-bar .data-list li a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
   padding: 10px 30px;
   cursor: pointer;
 }
-.search-bar .data-list li:hover {
+.search-bar .data-list li a:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
 
@@ -702,7 +812,9 @@ body {
   font-style: normal;
   text-transform: uppercase;
   transition: background-color 300ms ease;
-  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 52px 10px;
 }
 .button-primary:hover {
   background-color: #005dc2;
@@ -725,6 +837,8 @@ body {
   font-style: normal;
   text-transform: none;
   transition: background-color 300ms ease;
+  display: inline-block;
+  cursor: pointer;
   padding: 10px 5px;
   cursor: pointer;
   text-align: left;
@@ -733,13 +847,17 @@ body {
   background-color: rgba(0, 0, 0, 0);
 }
 .link-group li a i {
-  margin-right: 15px;
-}
-.link-group li a [class|=icon] {
-  margin-right: 15px;
+  margin-right: 12px;
 }
 .link-group li a.active {
   color: #4c4f59;
+}
+.link-group li a.active span {
+  color: #4c4f59;
+}
+.link-group li a span {
+  font-size: 14px;
+  color: #70727a;
 }
 .link-group li .dropdown {
   position: relative;
@@ -759,25 +877,28 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.link-group li .dropdown i:hover {
+  background-color: #70727a;
+  color: #ffffff;
+  border: none;
+}
 .link-group li:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
 .link-group li:hover a {
   color: #4c4f59;
 }
-.link-group li:hover .dropdown i {
-  background-color: #70727a;
-  color: #ffffff;
-  border: none;
+.link-group li:focus {
+  outline: 1px solid;
 }
 
 .icon {
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-radius: 1px;
+  border-radius: 2px;
   border: 3px solid;
-  margin-right: 8px;
+  margin-right: 12px;
 }
 
 .personal {
