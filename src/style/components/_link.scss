@@ -5,8 +5,8 @@
         position: relative;
         a{
             display: inline-block;
-            @include button($width:150px,$height:auto,$background-color:transparent,$color:$btn-clr-secondary,$font-size:14px);
-            padding: 10px 5px;
+            @include button($width:100%,$height:auto,$background-color:transparent,$color:$btn-clr-secondary,$font-size:14px);
+            padding: 10px 25px;
             cursor: pointer;
             text-align: left;
             i{

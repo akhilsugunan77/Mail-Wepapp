@@ -21,12 +21,15 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     width:$col-lg-size;
 }
 
-
-.row-layout{
-    .row-sm{
-        height: 60px;
+.row{
+    width: 100%;
+    .col{
+            width: 70%;
+            float: left;
+            &:last-child{
+                float: left;
+                width: 30%;
+            }
     }
-    .row-lg{
-        height: calc(100% - 10px);
-    }
+    @extend %clearfix;
 }

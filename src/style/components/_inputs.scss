@@ -4,24 +4,23 @@
     @include size(294px,30px);  
     position: relative;
     button{
-        height: 100%;
+        @include size(20px,100%);
         position: absolute;
         border: none;
         background-color: transparent;
         top: 50%;
         transform:translateY(-50%);
-        padding: 0;
     }
-    .icon-btn{
+    .search-btn{
         left: 0;
+        padding-left:9px;
         .fa-magnifying-glass{
             color: $search-icon-clr;
             font-size: 12px;
-            margin-left: 6px;
         }
     }
     .dropdown-btn{
-        left: 25px;
+        left: 20px;
         .fa-chevron-down{
             font-size:8px;
             color: $search-icon-clr;

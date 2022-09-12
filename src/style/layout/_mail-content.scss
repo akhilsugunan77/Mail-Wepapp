@@ -28,11 +28,11 @@
         color: $mail-title-clr;
     }
 
-    .from{
+    .label{
         font-size: 13px;
         color: $text-clr-primary;
     }
-    .sender{
+    .dropdown{
         display: inline-block;
         @include size(93px,23px);
         padding: 5px 10px 3px 12px;
@@ -72,25 +72,24 @@
                     width: 100px;
                     text-align: right;
                 }
-                &:last-child{
-                    span{
+                span{
                         width: 200px;
                         white-space: nowrap;
                         text-overflow: ellipsis;
-                    }                
-                }
+                }                
             }
         }
     }
 
     .icon-nav{
         float: right;
-        @include size(170px,34px,18px);
         box-shadow: 0 0 0 1px $shadow-clr;
         @extend %clearfix;
+        border-radius: 18px;
+        font-size: 0;
         button{
-            width: 25%;
-            height: 100%;
+            width: 41px;
+            height: 34px;
             float: left;
             color: $btn-clr-tertiary;
             font-size: 16px;

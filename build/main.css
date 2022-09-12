@@ -89,10 +89,6 @@ body {
   font-family: "opensans";
 }
 
-body {
-  min-height: 100vh;
-}
-
 .text-center {
   text-align: center;
 }
@@ -101,7 +97,7 @@ body {
   display: none;
 }
 
-.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-notification::after, .mail-nav::after, .side-nav .settings::after, .main-nav::after {
+.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-list li::after, .side-nav .settings::after, .main-nav::after, .row::after {
   content: "";
   display: block;
   clear: both;
@@ -257,6 +253,36 @@ body {
   margin-left: 16px;
 }
 
+.m-25 {
+  margin: 25px;
+}
+
+.my-25 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.mx-25 {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mr-25 {
+  margin-right: 25px;
+}
+
+.ml-25 {
+  margin-left: 25px;
+}
+
 .m-28 {
   margin: 28px;
 }
@@ -395,18 +421,23 @@ body {
   width: calc(100% - 202px - 30%);
 }
 
-.row-layout .row-sm {
-  height: 60px;
+.row {
+  width: 100%;
 }
-.row-layout .row-lg {
-  height: calc(100% - 10px);
+.row .col {
+  width: 70%;
+  float: left;
+}
+.row .col:last-child {
+  float: left;
+  width: 30%;
 }
 
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   z-index: 100;
 }
 
@@ -456,9 +487,12 @@ header {
   z-index: 50;
   background-color: rgba(255, 255, 255, 0.8);
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(112, 114, 122, 0.3) white;
 }
 .side-nav .settings {
   position: sticky;
+  width: 194px;
   margin-top: 170px;
   bottom: 0;
   background-color: #ffffff;
@@ -484,13 +518,26 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.side-nav::-webkit-scrollbar {
+  width: 8px;
+  background-color: white;
+}
+.side-nav::-webkit-scroll-track {
+  border-radius: 10px;
+}
+.side-nav::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(112, 114, 122, 0.3);
+}
 
 .mail-nav {
   overflow-y: auto;
   margin-top: 60px;
   margin-left: 202px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(112, 114, 122, 0.3) white;
 }
-.mail-nav .mail-notification {
+.mail-nav .mail-list li {
   display: block;
   position: relative;
   padding: 22px 16px 22px 20px;
@@ -501,46 +548,73 @@ header {
   backdrop-filter: blur(10px);
   cursor: pointer;
 }
-.mail-nav .mail-notification:last-child {
+.mail-nav .mail-list li:last-child {
   border: none;
 }
-.mail-nav .mail-notification .heading {
-  float: left;
+.mail-nav .mail-list li .col {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mail-nav .mail-list li .heading {
   font-size: 15px;
   color: #4c4f59;
 }
-.mail-nav .mail-notification .time {
-  float: right;
+.mail-nav .mail-list li .time {
   font-size: 12px;
   color: #4c4f59;
+  text-align: right;
 }
-.mail-nav .mail-notification .title {
+.mail-nav .mail-list li .title {
   font-size: 12px;
   color: #a3a3a8;
-  float: left;
   margin-top: 10px;
 }
-.mail-nav .mail-notification:hover {
+.mail-nav .mail-list li:hover {
   background-color: #ededed;
 }
-.mail-nav .mail-notification.active {
-  background-color: rgba(142, 142, 147, 0.05);
-}
-.mail-nav .mail-notification.active::before {
+.mail-nav .mail-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 250ms ease;
+  height: 100%;
+  width: 4px;
+}
+.mail-nav .mail-list li.active {
+  background-color: rgba(142, 142, 147, 0.05);
+}
+.mail-nav .mail-list li.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
   height: 100%;
   width: 4px;
   background-color: #007aff;
 }
-.mail-nav .mail-notification.active:hover {
+.mail-nav .mail-list li.active:hover {
   background-color: #ededed;
+}
+.mail-nav::-webkit-scrollbar {
+  width: 8px;
+  background-color: white;
+}
+.mail-nav::-webkit-scroll-track {
+  border-radius: 10px;
+}
+.mail-nav::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(112, 114, 122, 0.3);
 }
 
 .mail-info {
   float: right;
+  width: 30%;
+  text-align: right;
   margin-top: 8px;
 }
 .mail-info span {
@@ -550,6 +624,9 @@ header {
 .mail-info span i {
   color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
+}
+.mail-info span:first-child {
+  margin: 0;
 }
 .mail-info .filter-icon {
   display: inline-block;
@@ -603,11 +680,11 @@ header {
   font-size: 18px;
   color: #4c4f59;
 }
-.mail-content .from {
+.mail-content .label {
   font-size: 13px;
   color: #6b6e7f;
 }
-.mail-content .sender {
+.mail-content .dropdown {
   display: inline-block;
   width: 93px;
   height: 23px;
@@ -619,11 +696,11 @@ header {
   color: #8f929d;
   cursor: pointer;
 }
-.mail-content .sender i {
+.mail-content .dropdown i {
   margin-left: 3px;
   font-size: 8px;
 }
-.mail-content .sender:hover {
+.mail-content .dropdown:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
 .mail-content .mail-description {
@@ -651,21 +728,20 @@ header {
   width: 100px;
   text-align: right;
 }
-.mail-content .mail-description table td:last-child span {
+.mail-content .mail-description table td span {
   width: 200px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 .mail-content .icon-nav {
   float: right;
-  width: 170px;
-  height: 34px;
-  border-radius: 18px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+  border-radius: 18px;
+  font-size: 0;
 }
 .mail-content .icon-nav button {
-  width: 25%;
-  height: 100%;
+  width: 41px;
+  height: 34px;
   float: left;
   color: #6b6e7f;
   font-size: 16px;
@@ -740,24 +816,25 @@ header {
   position: relative;
 }
 .search-bar button {
+  width: 20px;
   height: 100%;
+  border-radius: 0;
   position: absolute;
   border: none;
   background-color: transparent;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0;
 }
-.search-bar .icon-btn {
+.search-bar .search-btn {
   left: 0;
+  padding-left: 9px;
 }
-.search-bar .icon-btn .fa-magnifying-glass {
+.search-bar .search-btn .fa-magnifying-glass {
   color: #b4b0af;
   font-size: 12px;
-  margin-left: 6px;
 }
 .search-bar .dropdown-btn {
-  left: 25px;
+  left: 20px;
 }
 .search-bar .dropdown-btn .fa-chevron-down {
   font-size: 8px;
@@ -825,7 +902,7 @@ header {
 }
 .link-group li a {
   display: inline-block;
-  width: 150px;
+  width: 100%;
   height: auto;
   border-radius: 0;
   background-color: transparent;
@@ -839,7 +916,7 @@ header {
   transition: background-color 300ms ease;
   display: inline-block;
   cursor: pointer;
-  padding: 10px 5px;
+  padding: 10px 25px;
   cursor: pointer;
   text-align: left;
 }
