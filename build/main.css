@@ -703,7 +703,7 @@ header {
 .mail-content .dropdown:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
-.mail-content .mail-description {
+.mail-content dropdown-data-list {
   position: absolute;
   background-color: #ffffff;
   padding: 10px;
@@ -714,21 +714,21 @@ header {
   color: #8f929d;
   border-radius: 5px;
 }
-.mail-content .mail-description table {
+.mail-content dropdown-data-list table {
   width: 300px;
 }
-.mail-content .mail-description table td {
+.mail-content dropdown-data-list table td {
   padding: 5px;
 }
-.mail-content .mail-description table td span {
+.mail-content dropdown-data-list table td span {
   display: inline-block;
   overflow: hidden;
 }
-.mail-content .mail-description table td:first-child {
+.mail-content dropdown-data-list table td:first-child {
   width: 100px;
   text-align: right;
 }
-.mail-content .mail-description table td span {
+.mail-content dropdown-data-list table td span {
   width: 200px;
   white-space: nowrap;
   text-overflow: ellipsis;

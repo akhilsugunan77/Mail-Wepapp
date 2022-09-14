@@ -26,7 +26,7 @@
                         <i class="fa-sharp fa-solid fa-chevron-down"></i>
                     </button>
                     <input id="search" type="text">
-                    <ul id="search-list" class="data-list hidden">
+                    <ul id="data-list" class="data-list hidden">
                         <li><a href="javascript:void(0)">personal</a></li>
                         <li><a href="javascript:void(0)">clients</a></li>
                         <li><a href="javascript:void(0)">family</a></li>
@@ -40,21 +40,21 @@
         <nav class="side-nav col-sm">
             <a class="button-primary ml-25">Compose</a>
             <ul class="link-group category mt-28">
-                <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span class="notification">(2)</span> </a></li>
-                <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span class="notification"></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-regular fa-star"></i>Starred <span class="notification"></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-regular fa-file-lines"></i>Draft  <span class="notification"></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span class="notification">(2)</span></a></li>
+                <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span>(2)</span> </a></li>
+                <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-regular fa-star"></i>Starred <span></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-regular fa-file-lines"></i>Draft  <span></span> </a></li>
+                <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span>(2)</span></a></li>
             </ul>
-            <ul class="link-group filter mt-38">
-                <li><a href="javascript:void(0)"><span class="icon personal"></span>Personal
+            <ul id="filter-btn" class="link-group filter mt-38">
+                <li><a href="javascript:void(0)" id="personal"><span class="icon personal"></span>Personal
                </a></li>
-                <li><a href="javascript:void(0)" class="dropdown"><span class="icon clients"></span>Clients<span class="notification"></span><i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
-                <li><a href="javascript:void(0)"><span class="icon family"></span> Family
+                <li><a href="javascript:void(0)" id="clients" class="dropdown"><span class="icon clients"></span>Clients<span class="notification"></span><i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="javascript:void(0)" id="family"><span class="icon family"></span> Family
                </a></li>
-                <li><a href="javascript:void(0)"> <span class="icon friends"></span>Friends
+                <li><a href="javascript:void(0)" id="friends"> <span class="icon friends"></span>Friends
                </a></li>
-                <li><a href="javascript:void(0)"> <span class="icon archives"></span>Archives
+                <li><a href="javascript:void(0)" id="archives"> <span class="icon archives"></span>Archives
                </a></li>
             </ul>
             <div class="settings">
@@ -63,99 +63,7 @@
             </div>
         </nav>
         <aside class="mail-nav col-md">
-           <ul class="mail-list">
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li class="active">
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-            <li>
-                <div class="row">
-                    <h2 class="heading col">My portfolio is up</h2><span class="col time">18:17</span>
-                </div>
-                <div class="row">
-                    <span class="title col">Jimmy Raherlarisoa</span>
-                    <div class="mail-info">
-                        <span><i class="fa-solid fa-paperclip"></i></span>
-                        <span><i class="fa-solid fa-share"></i></span>
-                        <span class="filter-icon"></span>
-                    </div>   
-                </div>
-            </li>
-           </ul>
+           <ul id="mail-list" class="mail-list"></ul>
         </aside>
         <main class="mail-content col-lg">
             <article class="mail">
@@ -176,7 +84,7 @@
                         Anne Thai
                         <i class="fa-sharp fa-solid fa-chevron-down"></i>
                     </span>
-                    <div class="mail-description hidden">
+                    <div class="dropdown-data-list hidden">
                         <table>
                             <tr>
                                 <td>

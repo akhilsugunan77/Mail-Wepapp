@@ -1,35 +1,67 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/input.js":
-/*!*************************!*\
-  !*** ./src/js/input.js ***!
-  \*************************/
+/***/ "./src/js/filter.js":
+/*!**************************!*\
+  !*** ./src/js/filter.js ***!
+  \**************************/
 /***/ (() => {
 
-var searchInput = document.getElementById("search");
-var searchList = document.getElementById("search-list");
-searchInput.addEventListener("click", function (e) {
-  if (searchList.classList.contains("hidden")) {
-    searchList.classList.remove("hidden");
-  } else {
-    searchList.classList.add("hidden");
+var filters = document.getElementById("filter-btn");
+filters.addEventListener("click", filtered);
+
+function filtered(e) {
+  if (e.target.id == "personal") {
+    console.log("personal");
   }
-});
-searchInput.addEventListener("keydown", function (e) {
-  if (e.key == "Escape") {
-    searchList.classList.add("hidden");
-  }
-});
-searchList.addEventListener("click", function (e) {
-  searchInput.value = e.target.innerText;
-  searchList.classList.add("hidden");
-});
-window.addEventListener("click", function (e) {
-  if (e.target = searchList.children) {
-    console.log("true");
-  } else {
-    console.log(false);
+}
+
+/***/ }),
+
+/***/ "./src/js/mail-list.js":
+/*!*****************************!*\
+  !*** ./src/js/mail-list.js ***!
+  \*****************************/
+/***/ (() => {
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var mailList = document.getElementById("mail-list");
+var mailData;
+var allMails = [],
+    personalMails = [],
+    clientMails = [];
+fetch("./json/maildata.json").then(function (response) {
+  return response.json();
+}).then(function (data) {
+  mailData = data;
+
+  var _iterator = _createForOfIteratorHelper(mailData),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      item = _step.value;
+
+      if (item.filter == "personal") {
+        personalMails.push(item);
+      }
+
+      if (item.filter == "clients") {
+        clientMails.push(item);
+      }
+
+      var a = "\n            <li>\n                <div class=\"row\">\n                    <h2 class=\"heading col\">".concat(item.title, "</h2><span class=\"col time\">").concat(item.time ? item.time : item.date, "</span>\n                </div>\n                <div class=\"row\">\n                    <span class=\"title col\">").concat(item.name, "</span>\n                    <div class=\"mail-info\">\n                        ").concat(item.reply ? "<span><i class=\"fa-solid fa-paperclip\"></i></span>" : "", "\n                        ").concat(item.attachment ? "<span><i class=\"fa-solid fa-share\"></i></span>" : "", "\n                        <span class=\"filter-icon ").concat(item.filter, "\"></span>\n                    </div>   \n                </div>\n            </li>\n        ");
+      mailList.insertAdjacentHTML("beforeend", a);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 });
 
@@ -56,6 +88,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 module.exports = __webpack_require__.p + "images/random.jpg";
+
+/***/ }),
+
+/***/ "./src/js/json/maildata.json":
+/*!***********************************!*\
+  !*** ./src/js/json/maildata.json ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "json/maildata.json";
 
 /***/ })
 
@@ -169,8 +212,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/style.scss */ "./src/style/style.scss");
 /* harmony import */ var _images_random_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/random.jpg */ "./src/images/random.jpg");
-/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./input */ "./src/js/input.js");
-/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_input__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _json_maildata_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./json/maildata.json */ "./src/js/json/maildata.json");
+/* harmony import */ var _mail_list__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mail-list */ "./src/js/mail-list.js");
+/* harmony import */ var _mail_list__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mail_list__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_filter__WEBPACK_IMPORTED_MODULE_4__);
+
+ // import "./input";
+
 
 
 

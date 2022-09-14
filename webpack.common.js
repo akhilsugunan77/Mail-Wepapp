@@ -51,6 +51,13 @@ module.exports = {
                 generator : {
                     filename : 'fonts/[name][ext]',
                 }
+            },
+            {
+                test:/\.json$/,
+                type:"asset/resource",
+                generator : {
+                    filename:'json/[name][ext]',
+                }
             }
         ]
     },

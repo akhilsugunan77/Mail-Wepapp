@@ -1,0 +1,112 @@
+[
+    {
+        "name":"Jimmy Raherlarisoa",
+        "title":"My porfolio is up",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail",
+        "date":"",
+        "time":"18:27",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Anne Thai",
+        "title":"Feedbacks UI Concept",
+        "image":"https://picsum.photos/200",
+        "message":"This is concept mail",
+        "date":"",
+        "time":"15:22",
+        "reply":true,
+        "attachment":true,
+        "filter":"clients"
+    },
+    {
+        "name":"Luca Tantardini",
+        "title":"Dont forgert My birthday",
+        "image":"https://picsum.photos/200",
+        "message":"This is birthday mail",
+        "date":"",
+        "time":"12:50",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Akhil Sugunan",
+        "title":"My porfolio is us",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from akhil sugunan",
+        "date":"",
+        "time":"09:52",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Dropbox Team",
+        "title":"About Dropbox Account",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from dropbox team",
+        "date":"",
+        "time":"12:50",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Clients Team",
+        "title":"About your Client",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from client",
+        "date":"",
+        "time":"15:50",
+        "reply":true,
+        "attachment":false,
+        "filter":"clients"
+    },
+    {
+        "name":"A Book Apart",
+        "title":"Order Confirmation",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from book apart team",
+        "date":"yesterday",
+        "time":"",
+        "reply":false,
+        "attachment":true,
+        "filter":"personal"
+    },
+    {
+        "name":"Antoine Farjon",
+        "title":"Check this crazy video",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from Antoine Farjon",
+        "date":"yesterday",
+        "time":"",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Hello Vincent",
+        "title":"Maxime Messer",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from Maxime Messer",
+        "date":"04/04/14",
+        "time":"",
+        "reply":true,
+        "attachment":false,
+        "filter":"personal"
+    },
+    {
+        "name":"Comment on your article",
+        "title":"Designmodo",
+        "image":"https://picsum.photos/200",
+        "message":"This is mail from Maxime Messer",
+        "date":"02/04/14",
+        "time":"",
+        "reply":false,
+        "attachment":false,
+        "filter":"clients"
+    }
+]
