@@ -50,9 +50,9 @@
         "message":"This is mail from dropbox team",
         "date":"",
         "time":"12:50",
-        "reply":true,
+        "reply":false,
         "attachment":false,
-        "filter":"personal"
+        "filter":""
     },
     {
         "name":"Clients Team",

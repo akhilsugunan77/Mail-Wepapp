@@ -24,6 +24,7 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
 .row{
     width: 100%;
     .col{
+            height: 20px;
             width: 70%;
             float: left;
             &:last-child{

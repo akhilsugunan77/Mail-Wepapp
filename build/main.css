@@ -97,7 +97,7 @@ body {
   display: none;
 }
 
-.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-nav .mail-list li::after, .side-nav .settings::after, .main-nav::after, .row::after {
+.mail-content .mail section::after, .mail-content .icon-nav::after, .mail-list li::after, .side-nav .settings::after, .main-nav::after, .row::after {
   content: "";
   display: block;
   clear: both;
@@ -425,6 +425,7 @@ body {
   width: 100%;
 }
 .row .col {
+  height: 20px;
   width: 70%;
   float: left;
 }
@@ -537,68 +538,6 @@ header {
   scrollbar-width: thin;
   scrollbar-color: rgba(112, 114, 122, 0.3) white;
 }
-.mail-nav .mail-list li {
-  display: block;
-  position: relative;
-  padding: 22px 16px 22px 20px;
-  border-bottom: 1px solid #ededed;
-  height: 90px;
-  background-color: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-.mail-nav .mail-list li:last-child {
-  border: none;
-}
-.mail-nav .mail-list li .col {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.mail-nav .mail-list li .heading {
-  font-size: 15px;
-  color: #4c4f59;
-}
-.mail-nav .mail-list li .time {
-  font-size: 12px;
-  color: #4c4f59;
-  text-align: right;
-}
-.mail-nav .mail-list li .title {
-  font-size: 12px;
-  color: #a3a3a8;
-  margin-top: 10px;
-}
-.mail-nav .mail-list li:hover {
-  background-color: #ededed;
-}
-.mail-nav .mail-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scale(0);
-  transition: transform 250ms ease;
-  height: 100%;
-  width: 4px;
-}
-.mail-nav .mail-list li.active {
-  background-color: rgba(142, 142, 147, 0.05);
-}
-.mail-nav .mail-list li.active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scale(1);
-  height: 100%;
-  width: 4px;
-  background-color: #007aff;
-}
-.mail-nav .mail-list li.active:hover {
-  background-color: #ededed;
-}
 .mail-nav::-webkit-scrollbar {
   width: 8px;
   background-color: white;
@@ -609,6 +548,69 @@ header {
 .mail-nav::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: rgba(112, 114, 122, 0.3);
+}
+
+.mail-list li {
+  display: block;
+  position: relative;
+  padding: 22px 16px 22px 20px;
+  border-bottom: 1px solid #ededed;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.mail-list li:last-child {
+  border: none;
+}
+.mail-list li .col {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mail-list li .heading {
+  font-size: 15px;
+  color: #4c4f59;
+}
+.mail-list li .time {
+  font-size: 12px;
+  color: #4c4f59;
+  text-align: right;
+}
+.mail-list li .title {
+  font-size: 12px;
+  color: #a3a3a8;
+  margin-top: 10px;
+}
+.mail-list li:hover {
+  background-color: #ededed;
+}
+.mail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 250ms ease;
+  height: 100%;
+  width: 4px;
+}
+.mail-list li.active {
+  background-color: rgba(142, 142, 147, 0.05);
+}
+.mail-list li.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  height: 100%;
+  width: 4px;
+  background-color: #007aff;
+}
+.mail-list li.active:hover {
+  background-color: #ededed;
 }
 
 .mail-info {
@@ -932,6 +934,12 @@ header {
 .link-group li a.active span {
   color: #4c4f59;
 }
+.link-group li a:focus {
+  color: #4c4f59;
+}
+.link-group li a:focus span {
+  color: #4c4f59;
+}
 .link-group li a span {
   font-size: 14px;
   color: #70727a;
@@ -996,6 +1004,17 @@ header {
 
 .archives {
   border: 3px solid #6f6e74;
+}
+
+.mail-list .skeleton {
+  padding: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 70px;
+  border-radius: 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #ededed;
 }
 
 /*# sourceMappingURL=main.css.map*/

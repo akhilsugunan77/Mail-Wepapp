@@ -18,6 +18,12 @@
                     color: $btn-clr-secondary-active;
                 }
             }
+            &:focus{
+                color: $btn-clr-secondary-active;
+                span{
+                    color: $btn-clr-secondary-active;
+                }
+            }
             span{
                 font-size: 14px;
                 color: $btn-clr-secondary;

@@ -1,0 +1,12 @@
+@use "../abstract" as *;
+
+.mail-list{
+    .skeleton{
+        padding: 0;
+        margin-bottom: 20px;
+        @include size(100%,70px);
+        border-radius: 10px;
+        border: none;
+        background-color: $white-three;
+    }
+}

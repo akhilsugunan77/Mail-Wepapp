@@ -4,6 +4,20 @@
     overflow-y:auto;
     margin-top: 60px;
     margin-left: 202px;
+    scrollbar-width:thin;
+    scrollbar-color: $scrollbar-clr  white;
+    &::-webkit-scrollbar{
+        width: 8px;
+        background-color: white;
+    }
+    &::-webkit-scroll-track{
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: $scrollbar-clr;
+    }
+}
     .mail-list{
         li{
             display: block;
@@ -69,20 +83,7 @@
             }
         }
     }
-    scrollbar-width:thin;
-    scrollbar-color: $scrollbar-clr  white;
-    &::-webkit-scrollbar{
-        width: 8px;
-        background-color: white;
-    }
-    &::-webkit-scroll-track{
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb{
-        border-radius: 10px;
-        background-color: $scrollbar-clr;
-    }
-}
+
 
 .mail-info{
     float:right;
