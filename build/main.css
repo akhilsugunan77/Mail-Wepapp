@@ -956,6 +956,9 @@ header {
 .dropdown-list li a:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
+.dropdown-list li.active a {
+  color: black;
+}
 
 .link-group {
   padding: 2px;

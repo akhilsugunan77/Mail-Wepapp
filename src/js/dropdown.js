@@ -14,8 +14,16 @@ fetch("./json/maildata.json")
     dropdownText.textContent = dropdownList.children[0].textContent;
 })
 
-dropdownBtn.addEventListener("click",function(){
+dropdownBtn.addEventListener("click",function(e){
     dropdownList.classList.toggle("hidden")
+    for(i of dropdownList.children){
+        if(i.textContent==dropdownText.textContent){
+            i.classList.add("active");
+        }
+        else{
+            i.classList.remove("active");
+        }
+    }
 })
 
 dropdownList.addEventListener("click",function(e){
