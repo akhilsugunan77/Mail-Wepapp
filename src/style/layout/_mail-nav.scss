@@ -104,7 +104,7 @@
     .filter-icon{
         display: inline-block;
         @include size(8px,8px,4px);
-        background-color: $personal-clr;
+        background-color: none;
             }
             .personal{
                 background-color: $personal-clr;

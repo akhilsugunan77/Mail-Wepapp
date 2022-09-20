@@ -1,12 +1,51 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/dropdown.js":
+/*!****************************!*\
+  !*** ./src/js/dropdown.js ***!
+  \****************************/
+/***/ (() => {
+
+var dropdownBtn = document.getElementById("dropdown-btn");
+var dropdownText = document.getElementById("dropdown-text");
+var dropdownList = document.getElementById("dropdown-list");
+var allMails;
+fetch("./json/maildata.json").then(function (response) {
+  return response.json();
+}).then(function (data) {
+  allMails = data;
+  allMails.map(function (i) {
+    var dropdownHtml = "<li><a href=\"javascript:void(0)\">".concat(i.name, "</a></li>");
+    dropdownList.insertAdjacentHTML("beforeend", dropdownHtml);
+  });
+  dropdownText.textContent = dropdownList.children[0].textContent;
+});
+dropdownBtn.addEventListener("click", function () {
+  dropdownList.classList.toggle("hidden");
+});
+dropdownList.addEventListener("click", function (e) {
+  var btn = e.target;
+  dropdownText.innerText = btn.innerText;
+  dropdownList.classList.add("hidden");
+  btn.classList.add("active");
+});
+
+/***/ }),
+
 /***/ "./src/js/filter.js":
 /*!**************************!*\
   !*** ./src/js/filter.js ***!
   \**************************/
 /***/ (() => {
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var category = document.getElementById("category");
 var filters = document.getElementById("filter-btn");
 var mailList = document.getElementById("mail-list");
 var allMails;
@@ -14,8 +53,14 @@ fetch("./json/maildata.json").then(function (response) {
   return response.json();
 }).then(function (data) {
   allMails = data;
-  allMails ? addList(allMails) : skeleton(7);
+  allMails ? addList(allMails) : skeleton(3);
   ;
+})["catch"](function (error) {
+  return console.log(error);
+});
+category.addEventListener("click", function (e) {
+  var btnId = e.target;
+  console.log(btnId);
 });
 filters.addEventListener("click", function (e) {
   var btnId = e.target.id;
@@ -23,7 +68,6 @@ filters.addEventListener("click", function (e) {
   switch (btnId) {
     case "personal":
       filter("personal");
-      e.target.focus();
       break;
 
     case "clients":
@@ -38,15 +82,20 @@ filters.addEventListener("click", function (e) {
       filter("friends");
       break;
 
-    case "archive":
-      filter("archive");
+    case "archives":
+      filter("archives");
       break;
   }
+
+  e.target.classList.add("active");
 });
 
 function addList(items) {
   items.map(function (i) {
-    var a = "\n        <li>\n            <div class=\"row\">\n                <h2 class=\"heading col\">".concat(i.title, "</h2><span class=\"col time\">").concat(i.time ? i.time : i.date, "</span>\n            </div>\n            <div class=\"row\">\n                <span class=\"title col\">").concat(i.name, "</span>\n                <div class=\"mail-info\">\n                    ").concat(i.reply ? "<span><i class=\"fa-solid fa-paperclip\"></i></span>" : "", "\n                    ").concat(i.attachment ? "<span><i class=\"fa-solid fa-share\"></i></span>" : "", "\n                    <span class=\"filter-icon ").concat(i.filter, "\"></span>\n                </div>   \n            </div>\n        </li>\n    ");
+    var date = new Date(i.time);
+    var mailDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+    var mailTime = date.getHours() + ":" + date.getMinutes();
+    var a = "\n        <li>\n            <div class=\"row\">\n                <h2 class=\"heading col\">".concat(i.title, "</h2><span class=\"col time\">").concat(mailTime, "</span>\n            </div>\n            <div class=\"row\">\n                <span class=\"title col\">").concat(i.name, "</span>\n                <div class=\"mail-info\">\n                    ").concat(i.reply ? "<span><i class=\"fa-solid fa-paperclip\"></i></span>" : "", "\n                    ").concat(i.attachment ? "<span><i class=\"fa-solid fa-share\"></i></span>" : "", "\n                    <span class=\"filter-icon ").concat(i.filter, "\"></span>\n                </div>   \n            </div>\n        </li>\n    ");
     mailList.insertAdjacentHTML("beforeend", a);
   });
 }
@@ -56,28 +105,71 @@ function filter(filter) {
   addList(allMails.filter(function (i) {
     return i.filter == filter;
   }));
+  var linkBtn = filters.children;
+
+  var _iterator = _createForOfIteratorHelper(filters.children),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      i = _step.value;
+      linkBtn[i].children[0].classList.remove("active");
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
 } // function notification(arr){
 //     return arr.filter(item=>item.number?item:"").length
 // }
 
 
 function skeleton(num) {
-  var a = "<li class=\"skeleton\"></li>";
+  var a = "<li class=\"skeleton\"> \n                <div></div><div></div>\n            </li>";
 
-  for (var i = 0; i < num; i++) {
+  for (var _i = 0; _i < num; _i++) {
     mailList.insertAdjacentHTML("beforeend", a);
   }
 }
 
 /***/ }),
 
-/***/ "./src/js/mail-list.js":
-/*!*****************************!*\
-  !*** ./src/js/mail-list.js ***!
-  \*****************************/
+/***/ "./src/js/search.js":
+/*!**************************!*\
+  !*** ./src/js/search.js ***!
+  \**************************/
 /***/ (() => {
 
-
+var searchInput = document.getElementById("search");
+var searchList = document.getElementById("data-list");
+searchInput.addEventListener("click", function (e) {
+  if (searchList.classList.contains("hidden")) {
+    searchList.classList.remove("hidden");
+  } else {
+    searchList.classList.add("hidden");
+  }
+});
+searchInput.addEventListener("keydown", function (e) {
+  if (e.key == "Escape") {
+    searchList.classList.add("hidden");
+  }
+});
+searchInput.addEventListener("focus", function (e) {
+  searchList.classList.remove("hidden");
+});
+searchInput.addEventListener("focusout", function (e) {
+  searchList.classList.add("hidden");
+});
+searchList.addEventListener("click", function (e) {
+  searchInput.value = e.target.innerText;
+  searchList.classList.add("hidden");
+});
+window.addEventListener("click", function (e) {
+  if (e.target == searchInput || e.target == searchList) {} else {
+    searchList.classList.add("hidden");
+  }
+});
 
 /***/ }),
 
@@ -227,12 +319,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/style.scss */ "./src/style/style.scss");
 /* harmony import */ var _images_random_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/random.jpg */ "./src/images/random.jpg");
 /* harmony import */ var _json_maildata_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./json/maildata.json */ "./src/js/json/maildata.json");
-/* harmony import */ var _mail_list__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mail-list */ "./src/js/mail-list.js");
-/* harmony import */ var _mail_list__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mail_list__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_filter__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_filter__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dropdown */ "./src/js/dropdown.js");
+/* harmony import */ var _dropdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_dropdown__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search */ "./src/js/search.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_search__WEBPACK_IMPORTED_MODULE_5__);
 
- // import "./input";
+
 
 
 

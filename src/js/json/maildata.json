@@ -5,7 +5,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail",
         "date":"",
-        "time":"18:27",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"personal"
@@ -16,7 +16,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is concept mail",
         "date":"",
-        "time":"15:22",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":true,
         "filter":"clients"
@@ -27,7 +27,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is birthday mail",
         "date":"",
-        "time":"12:50",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"personal"
@@ -38,7 +38,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from akhil sugunan",
         "date":"",
-        "time":"09:52",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"personal"
@@ -49,10 +49,10 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from dropbox team",
         "date":"",
-        "time":"12:50",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":false,
         "attachment":false,
-        "filter":""
+        "filter":"personal"
     },
     {
         "name":"Clients Team",
@@ -60,7 +60,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from client",
         "date":"",
-        "time":"15:50",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"clients"
@@ -71,7 +71,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from book apart team",
         "date":"yesterday",
-        "time":"",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":false,
         "attachment":true,
         "filter":"personal"
@@ -82,7 +82,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from Antoine Farjon",
         "date":"yesterday",
-        "time":"",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"personal"
@@ -93,7 +93,7 @@
         "image":"https://picsum.photos/200",
         "message":"This is mail from Maxime Messer",
         "date":"04/04/14",
-        "time":"",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":true,
         "attachment":false,
         "filter":"personal"
@@ -103,8 +103,8 @@
         "title":"Designmodo",
         "image":"https://picsum.photos/200",
         "message":"This is mail from Maxime Messer",
-        "date":"02/04/14",
-        "time":"",
+        "date":"",
+        "time":"2022-09-16T05:57:28.987Z",
         "reply":false,
         "attachment":false,
         "filter":"clients"

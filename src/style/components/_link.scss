@@ -1,6 +1,7 @@
 @use "../abstract" as *;
 
 .link-group{
+    padding: 2px;
     li{
         position: relative;
         a{
@@ -19,6 +20,7 @@
                 }
             }
             &:focus{
+                // outline: none;
                 color: $btn-clr-secondary-active;
                 span{
                     color: $btn-clr-secondary-active;

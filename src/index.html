@@ -38,7 +38,7 @@
         </nav>
     </header>
         <nav class="side-nav col-sm">
-            <a class="button-primary ml-25">Compose</a>
+            <a href="javascript:void(0)" class="button-primary ml-25">Compose</a>
             <ul id="category" class="link-group category mt-28">
                 <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span></span> </a></li>
                 <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span></span> </a></li>
@@ -47,14 +47,14 @@
                 <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span></span></a></li>
             </ul>
             <ul id="filter-btn" class="link-group filter mt-38">
-                <li><a href="javascript:void(0)" id="personal"><span class="icon personal"></span>Personal<span></span>
+                <li><a href="javascript:void(0)" id="personal" ><span class="icon personal"></span>Personal<span></span>
                </a></li>
-                <li><a href="javascript:void(0)" id="clients" class="dropdown"><span class="icon clients"></span>Clients<span></span><i class="ml-82 fa-sharp fa-solid fa-chevron-down"></i></a></li>
-                <li><a href="javascript:void(0)" id="family"><span class="icon family"></span> Family<span></span>
+                <li><a href="javascript:void(0)" id="clients" class="dropdown-link"><span class="icon clients"></span>Clients<span></span><i class="fa-sharp fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="javascript:void(0)" id="family" ><span class="icon family"></span> Family<span></span>
                </a></li>
-                <li><a href="javascript:void(0)" id="friends"> <span class="icon friends"></span>Friends<span></span>
+                <li><a href="javascript:void(0)" id="friends"  > <span class="icon friends"></span>Friends<span></span>
                </a></li>
-                <li><a href="javascript:void(0)" id="archives"> <span class="icon archives"></span>Archives<span></span>
+                <li><a href="javascript:void(0)" id="archives"  > <span class="icon archives"></span>Archives<span></span>
                </a></li>
             </ul>
             <div class="settings">
@@ -78,48 +78,16 @@
                         <button><i class="fa-solid fa-trash-can"></i></button>
                         <button><i class="fa-solid fa-share"></i></button>
                     </div>
-                    <h2 class="title mb-10">Feedbacks UI Concept</h2>
-                    <span class="label">From :</span>
-                    <span class="dropdown">
-                        Anne Thai
-                        <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                    </span>
-                    <div class="dropdown-data-list hidden">
-                        <table>
-                            <tr>
-                                <td>
-                                    <span>from:</span>
-                                </td>
-                                <td>
-                                    <span>Anne Thai</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>to:</span>
-                                </td>
-                                <td>
-                                    <span>Anne Thai</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>date:</span>
-                                </td>
-                                <td>
-                                    <span>12/12/22</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>bcc:</span>
-                                </td>
-                                <td>
-                                    <span>bccccccc</span>
-                                </td>
-                            </tr>
-                        </table>
+                        <h2 class="title mb-10">Feedbacks UI Concept</h2>
+                    <div class="clearfix">
+                        <span class="label">From :</span>
+                        <div id="dropdown-btn" class="dropdown">
+                            <span id="dropdown-text"></span> 
+                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul id="dropdown-list" class="dropdown-list hidden"></ul>
                     </div>
+                        
                 </section>
                 <hr class="mt-38 mb-30">
                 <section class="content">

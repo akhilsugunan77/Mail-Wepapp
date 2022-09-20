@@ -34,3 +34,23 @@ $col-lg-size:calc(100% - $col-sm-size - $col-md-size);
     }
     @extend %clearfix;
 }
+
+
+.fl-3-col{
+    width: 100%;
+    .col-sm{
+        float: left;
+        width: 20%;
+        height: auto;
+    }
+    .col-md{
+        float: left;
+        width: 40%;
+        height: auto;
+    }
+    .col-lg{
+        float: left;
+        width: 40%;
+        height: auto;
+    }
+}

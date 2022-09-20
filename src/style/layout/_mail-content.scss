@@ -27,60 +27,17 @@
         font-size: 18px;
         color: $mail-title-clr;
     }
-
+    
     .label{
+        float: left;
+        margin-top: 5px;
         font-size: 13px;
         color: $text-clr-primary;
     }
     .dropdown{
-        display: inline-block;
-        @include size(93px,23px);
-        padding: 5px 10px 3px 12px;
-        border-radius: 12px;
-        box-shadow: 0 0 0 1px $shadow-clr;
-        font-size: 12px;
-        color: $mail-sender-clr-secondary;
-        cursor: pointer;
-        i{
-            margin-left: 3px;
-            font-size: 8px;
-        }
-        &:hover{
-            background-color: $shadow-clr;
-        }
+        margin-left: 5px;
+        float: left;
     }
-    dropdown-data-list{
-        position: absolute;
-        background-color: $white;
-        padding: 10px;
-        left: 120px;
-        z-index: 10;
-        border: 1px solid $border-clr-primary;
-        font-size: 12px;
-        color: $mail-sender-clr-secondary;
-        border-radius: 5px;
-        table{
-            width:300px;
-            
-            td{
-                padding: 5px;
-                span{
-                    display: inline-block;
-                    overflow: hidden;
-                }
-                &:first-child{
-                    width: 100px;
-                    text-align: right;
-                }
-                span{
-                        width: 200px;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                }                
-            }
-        }
-    }
-
     .icon-nav{
         float: right;
         box-shadow: 0 0 0 1px $shadow-clr;

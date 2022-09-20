@@ -1,5 +1,5 @@
 const searchInput = document.getElementById("search")
-const searchList = document.getElementById("search-list")
+const searchList = document.getElementById("data-list")
 
 searchInput.addEventListener("click",function(e){
     if(searchList.classList.contains("hidden")){
@@ -9,11 +9,16 @@ searchInput.addEventListener("click",function(e){
         searchList.classList.add("hidden")
     }
 })
-
 searchInput.addEventListener("keydown",e =>{
     if(e.key=="Escape"){
         searchList.classList.add("hidden")
     }
+})
+searchInput.addEventListener("focus",e =>{
+    searchList.classList.remove("hidden")
+})
+searchInput.addEventListener("focusout",e =>{
+    searchList.classList.add("hidden");
 })
 
 
@@ -23,10 +28,10 @@ searchList.addEventListener("click",function(e){
 })
 
 window.addEventListener("click",function(e){
-    if(e.target = searchList.children){
-        console.log("true")
+    if(e.target==searchInput||e.target==searchList){
+        
     }
     else{
-        console.log(false)
+        searchList.classList.add("hidden");
     }
 })

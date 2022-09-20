@@ -16,6 +16,7 @@ header{
         width: 33.33%;
     }
     .brand{
+        @include size(56px,24px);
         float: left;
         z-index: 1;
         .brand-img{
