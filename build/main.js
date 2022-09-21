@@ -26,6 +26,8 @@ fetch("./json/maildata.json").then(function (response) {
     dropdownList.insertAdjacentHTML("beforeend", dropdownHtml);
   });
   dropdownText.textContent = dropdownList.children[0].textContent;
+})["catch"](function (err) {
+  return console.log(err);
 });
 dropdownBtn.addEventListener("click", function (e) {
   dropdownList.classList.toggle("hidden");

@@ -3,6 +3,7 @@ const dropdownText = document.getElementById("dropdown-text")
 const dropdownList = document.getElementById("dropdown-list")
 
 let allMails
+
 fetch("./json/maildata.json")
 .then(response=>response.json())
 .then(data=>{
@@ -13,6 +14,7 @@ fetch("./json/maildata.json")
     })
     dropdownText.textContent = dropdownList.children[0].textContent;
 })
+.catch(err=>console.log(err))
 
 dropdownBtn.addEventListener("click",function(e){
     dropdownList.classList.toggle("hidden")
