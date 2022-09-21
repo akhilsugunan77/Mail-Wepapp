@@ -32,29 +32,40 @@
         box-shadow: 0 0 0 1px $shadow-clr;
         padding: 0 20px 0 40px;
         border: none;
+        color: $text-clr-primary;
+        &:focus{
+            outline: none;
+        }
+    }
+    input.active{
+        border: 1px solid $shadow-clr;
+        border-bottom: none;
+        border-radius: 15px 15px 0 0;
         &:focus{
             outline:none;
-            border: 1px solid $greyish;
         }
     }
 
     .data-list{
         position: absolute;
-        top: 30px;
         width: 100%;
-        background-color: #fff;
-        text-align: center;
-        border: 1px solid $border-clr-primary;
+        top: 30px;
+        background-color: $white;
+        border: 1px solid $shadow-clr;
+        border-top: none;
+        border-radius: 0 0 15px 15px;
         z-index: 10;
-        font-size: 15px;
-        color: $text-clr-primary;
+        font-size: 13px;
+        color: $dd-text-clr;
         li{
+            height: 35px;
             a{
+                display: inline-block;
+                height: 100%;
+                width: 100%;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                width: 100%;
-                display: inline-block;
                 padding: 10px 30px;
                 cursor: pointer;
                 &:hover{

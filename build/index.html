@@ -38,25 +38,27 @@
         </nav>
     </header>
         <nav class="side-nav col-sm">
-            <a href="javascript:void(0)" class="button-primary ml-25">Compose</a>
-            <ul id="category" class="link-group category mt-28">
-                <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span></span> </a></li>
-                <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-regular fa-star"></i>Starred <span></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-regular fa-file-lines"></i>Draft  <span></span> </a></li>
-                <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span></span></a></li>
-            </ul>
-            <ul id="filter-btn" class="link-group filter mt-38">
-                <li><a href="javascript:void(0)" id="personal" ><span class="icon personal"></span>Personal<span></span>
-               </a></li>
-                <li><a href="javascript:void(0)" id="clients" class="dropdown-link"><span class="icon clients"></span>Clients<span></span><i class="fa-sharp fa-solid fa-chevron-down"></i></a></li>
-                <li><a href="javascript:void(0)" id="family" ><span class="icon family"></span> Family<span></span>
-               </a></li>
-                <li><a href="javascript:void(0)" id="friends"  > <span class="icon friends"></span>Friends<span></span>
-               </a></li>
-                <li><a href="javascript:void(0)" id="archives"  > <span class="icon archives"></span>Archives<span></span>
-               </a></li>
-            </ul>
+            <div class="link-group-container">
+                <a href="javascript:void(0)" class="button-primary ml-25">Compose</a>
+                <ul id="category" class="link-group category mt-28">
+                    <li><a href="javascript:void(0)" class="active"><i class="fa-solid fa-inbox"></i>Inbox <span></span> </a></li>
+                    <li><a href="javascript:void(0)" ><i class="fa-solid fa-right-from-bracket"></i>Sent Mail <span></span> </a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-regular fa-star"></i>Starred <span></span> </a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-regular fa-file-lines"></i>Draft  <span></span> </a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i>Trash <span></span></a></li>
+                </ul>
+                <ul id="filter-btn" class="link-group filter mt-38">
+                    <li><a href="javascript:void(0)" id="personal" ><span class="icon personal"></span>Personal<span></span>
+                   </a></li>
+                    <li><a href="javascript:void(0)" id="clients" class="dropdown-link"><span class="icon clients"></span>Clients<span></span><i class="fa-sharp fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="javascript:void(0)" id="family" ><span class="icon family"></span> Family<span></span>
+                   </a></li>
+                    <li><a href="javascript:void(0)" id="friends"  > <span class="icon friends"></span>Friends<span></span>
+                   </a></li>
+                    <li><a href="javascript:void(0)" id="archives"  > <span class="icon archives"></span>Archives<span></span>
+                   </a></li>
+                </ul>
+            </div>
             <div class="settings">
                 <a href="javascript:void(0)"><i class="fa-solid fa-gear"></i></a>
                 <a href="javascript:void(0)"><i class="fa-regular fa-user"></i></a>
@@ -82,7 +84,9 @@
                     <div class="clearfix">
                         <span class="label">From :</span>
                         <div id="dropdown-btn" class="dropdown">
-                            <span id="dropdown-text"></span> 
+                            <div class="dropdown-text-container">
+                                <span id="dropdown-text"></span>
+                            </div> 
                             <i class="fa-sharp fa-solid fa-chevron-down"></i>
                         </div>
                         <ul id="dropdown-list" class="dropdown-list hidden"></ul>

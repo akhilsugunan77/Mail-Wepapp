@@ -4,23 +4,23 @@ const searchList = document.getElementById("data-list")
 searchInput.addEventListener("click",function(e){
     if(searchList.classList.contains("hidden")){
         searchList.classList.remove("hidden")
+        searchInput.classList.add("active")
     }
     else{
         searchList.classList.add("hidden")
+        searchInput.classList.remove("active")
     }
 })
 searchInput.addEventListener("keydown",e =>{
     if(e.key=="Escape"){
         searchList.classList.add("hidden")
+        searchInput.classList.remove("active")
     }
 })
 searchInput.addEventListener("focus",e =>{
     searchList.classList.remove("hidden")
+    searchInput.classList.add("active");
 })
-searchInput.addEventListener("focusout",e =>{
-    searchList.classList.add("hidden");
-})
-
 
 searchList.addEventListener("click",function(e){
     searchInput.value = e.target.innerText;
@@ -28,10 +28,8 @@ searchList.addEventListener("click",function(e){
 })
 
 window.addEventListener("click",function(e){
-    if(e.target==searchInput||e.target==searchList){
-        
-    }
-    else{
+    if(e.target!=searchInput&&e.target!=searchList){
+        searchInput.classList.remove("active");
         searchList.classList.add("hidden");
     }
 })

@@ -1,20 +1,34 @@
 @use "../abstract" as *;
 .side-nav{
-    padding-top: 20px;
     position: fixed;
     top: 60px;
     z-index: 50;
     background-color: $white-08;
-    overflow-y: auto;
+    .link-group-container{
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        padding-top: 20px;
+        scrollbar-width:thin;
+        scrollbar-color: $scrollbar-clr  white;
+        &::-webkit-scrollbar{
+            width: 8px;
+            background-color: white;
+        }
+        &::-webkit-scroll-track{
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background-color: $scrollbar-clr;
+        }
+    }
     .settings{
-        position:sticky;
-        width: 194px;
-        margin-top: 150px;
+        position:fixed;
         bottom:0;
         background-color: $white;
         @extend %clearfix;
         a{
-            @include size(50%,60px);
+            @include size(100px,60px);
             position: relative;
             float: left;
             color: $btn-clr-quatenary;
@@ -33,17 +47,5 @@
             }
         }
     }
-    scrollbar-width:thin;
-    scrollbar-color: $scrollbar-clr  white;
-    &::-webkit-scrollbar{
-        width: 8px;
-        background-color: white;
-    }
-    &::-webkit-scroll-track{
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb{
-        border-radius: 10px;
-        background-color: $scrollbar-clr;
-    }
+
 }

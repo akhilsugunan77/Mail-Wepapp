@@ -31,22 +31,14 @@
                 color: $btn-clr-secondary;
             }
         }
-        .dropdown{
-            position: relative;
+        .dropdown-link{
             i{
-                @include size(12px,12px,2px);
-                position: absolute;
-                font-size: 5px;
-                top: 50%;
-                transform:translateY(-50%);
-                &::before{
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform:translate(-50%,-50%);
-                }
+                margin-left: 40px;
+                font-size: 8px;
+                padding: 2px;
                 &:hover{
-                    @include color($btn-clr-secondary,$white);
+                    color: $white;
+                    background-color:$btn-clr-secondary;
                 }
             }
         }

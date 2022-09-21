@@ -21,7 +21,7 @@ fetch("./json/maildata.json").then(function (response) {
   return response.json();
 }).then(function (data) {
   allMails = data;
-  allMails.map(function (i) {
+  allMails.slice(0, 5).map(function (i) {
     var dropdownHtml = "<li><a href=\"javascript:void(0)\">".concat(i.name, "</a></li>");
     dropdownList.insertAdjacentHTML("beforeend", dropdownHtml);
   });
@@ -54,6 +54,11 @@ dropdownList.addEventListener("click", function (e) {
   dropdownText.innerText = btn.innerText;
   dropdownList.classList.add("hidden");
   btn.classList.add("active");
+});
+window.addEventListener("click", function (e) {
+  if (e.target != dropdownBtn && e.target != dropdownText) {
+    dropdownList.classList.add("hidden");
+  }
 });
 
 /***/ }),
@@ -171,27 +176,29 @@ var searchList = document.getElementById("data-list");
 searchInput.addEventListener("click", function (e) {
   if (searchList.classList.contains("hidden")) {
     searchList.classList.remove("hidden");
+    searchInput.classList.add("active");
   } else {
     searchList.classList.add("hidden");
+    searchInput.classList.remove("active");
   }
 });
 searchInput.addEventListener("keydown", function (e) {
   if (e.key == "Escape") {
     searchList.classList.add("hidden");
+    searchInput.classList.remove("active");
   }
 });
 searchInput.addEventListener("focus", function (e) {
   searchList.classList.remove("hidden");
-});
-searchInput.addEventListener("focusout", function (e) {
-  searchList.classList.add("hidden");
+  searchInput.classList.add("active");
 });
 searchList.addEventListener("click", function (e) {
   searchInput.value = e.target.innerText;
   searchList.classList.add("hidden");
 });
 window.addEventListener("click", function (e) {
-  if (e.target == searchInput || e.target == searchList) {} else {
+  if (e.target != searchInput && e.target != searchList) {
+    searchInput.classList.remove("active");
     searchList.classList.add("hidden");
   }
 });

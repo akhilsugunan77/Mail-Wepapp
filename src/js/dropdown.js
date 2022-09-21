@@ -7,7 +7,7 @@ fetch("./json/maildata.json")
 .then(response=>response.json())
 .then(data=>{
     allMails=data; 
-    allMails.map((i)=>{
+    allMails.slice(0,5).map((i)=>{
         let dropdownHtml = `<li><a href="javascript:void(0)">${i.name}</a></li>`;
         dropdownList.insertAdjacentHTML("beforeend",dropdownHtml);
     })
@@ -33,3 +33,8 @@ dropdownList.addEventListener("click",function(e){
     btn.classList.add("active");
 })
 
+window.addEventListener("click",function(e){
+    if(e.target!=dropdownBtn&&e.target!=dropdownText){
+        dropdownList.classList.add("hidden")
+    }
+})
