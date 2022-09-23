@@ -1,6 +1,7 @@
 const dropdownBtn = document.getElementById("dropdown-btn")
 const dropdownText = document.getElementById("dropdown-text")
 const dropdownList = document.getElementById("dropdown-list")
+const dropdownIcon = document.getElementById("dropdown-arrow")
 
 let allMails
 
@@ -36,7 +37,7 @@ dropdownList.addEventListener("click",function(e){
 })
 
 window.addEventListener("click",function(e){
-    if(e.target!=dropdownBtn&&e.target!=dropdownText){
+    if(e.target!=dropdownBtn&&e.target!=dropdownText&&e.target!=dropdownIcon){
         dropdownList.classList.add("hidden")
     }
 })

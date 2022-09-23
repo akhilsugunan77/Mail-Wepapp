@@ -16,6 +16,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var dropdownBtn = document.getElementById("dropdown-btn");
 var dropdownText = document.getElementById("dropdown-text");
 var dropdownList = document.getElementById("dropdown-list");
+var dropdownIcon = document.getElementById("dropdown-arrow");
 var allMails;
 fetch("./json/maildata.json").then(function (response) {
   return response.json();
@@ -58,7 +59,7 @@ dropdownList.addEventListener("click", function (e) {
   btn.classList.add("active");
 });
 window.addEventListener("click", function (e) {
-  if (e.target != dropdownBtn && e.target != dropdownText) {
+  if (e.target != dropdownBtn && e.target != dropdownText && e.target != dropdownIcon) {
     dropdownList.classList.add("hidden");
   }
 });
