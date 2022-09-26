@@ -1,0 +1,52 @@
+@use "../abstract" as *;
+@use "../global" as *;
+
+#editor{
+    border-color: $shadow-clr;
+}
+
+.ql-editor{
+    scrollbar-width:thin;
+    scrollbar-color: $scrollbar-clr  white;
+    &::-webkit-scrollbar{
+        width: 8px;
+        background-color: white;
+    }
+    &::-webkit-scroll-track{
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: $scrollbar-clr;
+    }
+}
+
+
+.ql-toolbar.ql-snow{
+    border-color: $shadow-clr;
+}
+
+.ql-snow .ql-formats span {
+    color: $text-clr-primary;
+}
+
+.ql-snow .ql-stroke{
+    stroke: $text-clr-primary;
+}
+
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+ .ql-snow .ql-picker.ql-font .ql-picker-item::before{
+    content: "Default";
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='opensans']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='opensans']::before
+{
+  content: 'Open Sans';
+  font-family: $primary-font;
+}
+
+.ql-font-opensans{
+    font-family: $primary-font;
+}

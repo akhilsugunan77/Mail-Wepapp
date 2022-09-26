@@ -5,7 +5,7 @@ const dropdownIcon = document.getElementById("dropdown-arrow")
 
 let allMails
 
-fetch("./json/maildata.json")
+fetch("./data/maildata.json")
 .then(response=>response.json())
 .then(data=>{
     allMails=data; 

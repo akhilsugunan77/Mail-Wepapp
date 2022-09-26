@@ -3,7 +3,7 @@ const filters = document.getElementById("filter-btn");
 const mailList = document.getElementById("mail-list");
 
 let allMails
-fetch("./json/maildata.json")
+fetch("./data/maildata.json")
 .then(response=>response.json())
 .then(data=>{
     allMails=data; 
@@ -34,6 +34,10 @@ filters.addEventListener("click",(e)=>{
         case "archives":
             filter("archives");
             break;
+    }
+    let linkBtn=filters.children
+    for(i of linkBtn){
+        i.children[0].classList.remove("active");
     }
     e.target.classList.add("active")
 })
@@ -67,10 +71,6 @@ function addList(items){
 function filter(filter){
     mailList.innerHTML="";
     addList(allMails.filter(i=>i.filter==filter));
-    let linkBtn=filters.children
-    for(i of filters.children){
-        linkBtn[i].children[0].classList.remove("active");
-    }
 }
 
 // function notification(arr){

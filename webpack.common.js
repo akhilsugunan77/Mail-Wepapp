@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const loader = require("sass-loader");
 
 module.exports = {
-    entry:"./src/js/index.js",
+    entry:"./src/index.js",
     output:{
         path:path.resolve(__dirname,"./build"),
         filename:"[name].js",
@@ -56,7 +56,7 @@ module.exports = {
                 test:/\.json$/,
                 type:"asset/resource",
                 generator : {
-                    filename:'json/[name][ext]',
+                    filename:'data/[name][ext]',
                 }
             }
         ]
