@@ -1,8 +1,14 @@
 @use "../abstract" as *;
 @use "../global" as *;
 
+@import '~quill/dist/quill.snow.css';
+
+// editor container
 #editor{
+    width: 100%;
+    height: 450px;
     border-color: $shadow-clr;
+    font-family: $primary-font;
 }
 
 .ql-editor{
@@ -21,8 +27,9 @@
     }
 }
 
-
+// toolbar
 .ql-toolbar.ql-snow{
+    font-family: $primary-font;
     border-color: $shadow-clr;
 }
 
@@ -34,12 +41,7 @@
     stroke: $text-clr-primary;
 }
 
-
-.ql-snow .ql-picker.ql-font .ql-picker-label::before,
- .ql-snow .ql-picker.ql-font .ql-picker-item::before{
-    content: "Default";
-}
-
+// fonts
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='opensans']::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='opensans']::before
 {
@@ -49,4 +51,15 @@
 
 .ql-font-opensans{
     font-family: $primary-font;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
+{
+  content: 'San Serif';
+  font-family: sans-serif
+}
+
+.ql-font-sanserif{
+    font-family: sans-serif;
 }

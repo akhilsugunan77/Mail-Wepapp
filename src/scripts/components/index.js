@@ -1,4 +1,4 @@
 import "./dropdown";
 import "./search";
 import "./filter";
-import "./editor";
+import "./editor/editor";
