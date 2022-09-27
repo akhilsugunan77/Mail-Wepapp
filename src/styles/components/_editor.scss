@@ -8,7 +8,6 @@
     width: 100%;
     height: 450px;
     border-color: $shadow-clr;
-    font-family: $primary-font;
 }
 
 .ql-editor{
@@ -42,6 +41,12 @@
 }
 
 // fonts
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
+{
+  content: 'Default';
+}
+
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='opensans']::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='opensans']::before
 {
@@ -51,15 +56,4 @@
 
 .ql-font-opensans{
     font-family: $primary-font;
-}
-
-.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
-.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
-{
-  content: 'San Serif';
-  font-family: sans-serif
-}
-
-.ql-font-sanserif{
-    font-family: sans-serif;
 }

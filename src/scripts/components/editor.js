@@ -7,8 +7,8 @@ Quill.register(Font, true);
 let toolbarOptions =[
     ['bold', 'italic', 'underline', 'strike'],
     [{"size":[false,"small","large","huge"]}],
-    [{"font":["opensans",""]}],
-    [{"align":[]}],
+    [{"font":["","opensans"]}],
+    [{"align":["","center","justify","right"]}],
     ["clean"]
 ];
 

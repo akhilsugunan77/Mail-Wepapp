@@ -1,6 +1,10 @@
 @font-face {
     font-family: "opensans";
-    src: url("~/src/fonts/OpenSans.woff") format("woff");
+    src: url("/src/fonts/OpenSans.woff") format("woff"),
+         url("/src/fonts/OpenSans.woff2") format("woff2"),
+         url("/src/fonts/OpenSans.ttf") format("ttf"),
+         url("/src/fonts/OpenSans.eot") format("eot");
+    ;
     font-weight: normal;
     font-style: normal;
 }
